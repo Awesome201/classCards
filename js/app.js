@@ -16,15 +16,6 @@ function checkLocalStorage() {
   }
 }
 
-//if not a user, only access about, else full access
-// function checkUser() {
-//   if (userName === null) {
-
-//   } else {
-
-//   }
-// }
-
 //set the value to user input and save to local storage
 function handleLogin (e) {
   e.preventDefault();
