@@ -3,6 +3,7 @@
 // declare global variables 
 var mainEl = document.getElementById('content');
 // Add obj array
+var matchArray = [];
 Profile.allProfiles = [];
 
 // Profile obj constructor
@@ -30,11 +31,32 @@ function buildLiEl (promptValue, displayValue) {
 
 // Find matches
 function matchFinder (object, compareArray) {
+  var matchNumber = 0;
   for (var i in compareArray) {
     if (object.userColor === compareArray[i].userColor) {
-      
+      matchNumber++;
     }
   }
+  for (var j in compareArray) {
+    if (object.userHobby === compareArray[j].userHobby) {
+      matchNumber++;
+    }
+  }
+  for (var k in compareArray) {
+    if (object.knownLanguage === compareArray[k].knownLanguage) {
+      matchNumber++;
+    }
+  }
+  for (var l in compareArray) {
+    if (object.interestedLanguage === compareArray[l].interestedLanguage) {
+      matchNumber++;
+    }
+  }
+  var matchAndNumber = {
+    id: i,
+    matches: matchNumber
+  };
+  matchArray.push(matchAndNumber);
 }
 // Create and appened card
 function createCard (profileObj) {
