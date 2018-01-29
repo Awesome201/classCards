@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<head>
+<html>
+  <head>
     <meta description = "Class Cards">
     <meta charset="utf-8">
     <title>Class Cards by Awesome 201</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    
-</head>
-<html>
+    <link rel="stylesheet" href="css/style.css"> 
+  </head>
   <body>
-  
   <nav>
     <img src = "https://placehold.it/200x100">
     <h1 class="center">Class Cards</h1>
@@ -21,5 +19,16 @@
       <li class = "tiny" id="nav-link"><i>>>Currently on home page</i></li>
     </ol>
   </nav>
+    <fieldset>
+      <legend>Login</legend>
+      <form name="loginForm" id="loginForm">
+        <label for="userName">User Name:</label>
+        <input id="userName" name="userName" type="text" required="">
+        <!-- <label for="password">Password:</label>
+        <input name="password" type="password"> -->
+        <button id="login">Log In</button>
+      </form>
+    </fieldset>
+    <script src="js/app.js"></script>
   </body>
 </html>
