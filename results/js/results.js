@@ -20,11 +20,21 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
 new Profile('kevin', '../img/250px-280Ralts.png', 'martial arts', 'green', 'cSharp', 'javascript');
 new Profile('Ramone', 'rogue', 'martial arts', 'green', 'cSharp', 'javascript');
 new Profile('Zach', 'rogue', 'martial arts', 'green', 'cSharp', 'javascript');
+
 // Li builder
 function buildLiEl (promptValue, displayValue) {
   var liEl = document.createElement('li');
   liEl.textContent = promptValue + displayValue;
   return liEl;
+}
+
+// Find matches
+function matchFinder (object, compareArray) {
+  for (var i in compareArray) {
+    if (object.userColor === compareArray[i].userColor) {
+      
+    }
+  }
 }
 // Create and appened card
 function createCard (profileObj) {
