@@ -48,6 +48,7 @@ function handleLogin (e) {
   e.preventDefault();
   userName = inputElUserName.value;
   localStorage.userName = JSON.stringify(userName);
+  window.location = 'profile/profile.html';
 }
 
 //call login function on submit
