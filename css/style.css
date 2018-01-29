@@ -54,27 +54,27 @@ section {
 }
 
 #firstcard {
-  background-color: rgb(69, 219, 23);
+  float: right;
+  margin: 0px 0px 15px 15px;
 }
 
-#secondcard { */
+#secondcard {
+float: right;
+margin: 0px 0px 15px 15px;
+}
 
-/* } */
-/* 
 #thirdcard {
-  margin-bottom: 20px;
-  width:200px;
-  float:left;
+float: right;
+margin: 0px 0px 15px 15px;
+  
 }
 
 #fourthcard {
-  margin-bottom: 20px;
-  width:200px;
-  float:left;
+float: right;
+margin: 0px 0px 15px 15px;
 }
 
 #fifthcard {
-  margin-bottom: 20px;
-  width:200px;
-  float:left;
-}   */
+float: right;
+margin: 0px 0px 15px 15px;
+} 
