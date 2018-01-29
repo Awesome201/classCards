@@ -13,8 +13,26 @@ function checkLocalStorage() {
     localStorage.userName = JSON.stringify();
   } else {
     userName = JSON.parse(localStorage.userName);
+    var navOlElement = document.getElementById('conditional-nav');
+    
+    var navliElement = document.createElement('li');
+    var navaElement = document.createElement('a');
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'Edit Your Profile';
+    navaElement.href = 'profile/profile.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+
+    navliElement = document.createElement('li');
+    navaElement = document.createElement('a');
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'See Your Class Cards';
+    navaElement.href = 'results/results.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
   }
 }
+
 
 //if not a user, only access about, else full access
 // function checkUser() {
