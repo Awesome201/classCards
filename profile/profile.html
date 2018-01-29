@@ -19,9 +19,35 @@
       <li class = "tiny" id="nav-link"><i>>>Currently on Profile page</i></li>
     </ol>
   </nav>
-  <header></header>
-  <main></main>
-  <footer></footer>
-  <script src="js/results.js"></script>
+  <form id="newUserForm">
+    <fieldset>
+      <legend>Fill out the questions below</legend>
+
+      <label for="userName">Enter your name.</label>
+      <input name="userName" type="text">
+
+      <label for="userAvatar">Choose your avatar.</label>
+      <select name="userAvatar" type="text">
+        <option value="pic1">PICTURE 1</option>
+
+      </select>
+      
+      <label for="userColor">Choose your color</label>
+      <input name="userColor" type="text">
+      
+      <label for="userHobby">What's your hobby?</label>
+      <input name="userHobby" type="text">
+
+      <label for="knownLanguage">What coding languages do you know?</label>
+      <input name="knownLanguage" type="text">
+
+      <label for="interestedLanguage">What coding languages are you interested in knowing?</label>
+      <input name="interestedLanguage" type="text">
+
+      <button id="addUser">Submit</button>
+      <!-- <button id="addUser"><a href="../results/results.html">Submit</a></button> -->
+    </fieldset>
+  </form>
+  <script src="js/profile.js"></script>
 </body>
 </html>
