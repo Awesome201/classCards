@@ -2,6 +2,7 @@
 butter #F2D387
 Salmon #C3866B
 eggplant #874D63 */
+<<<<<<< HEAD
 body {
   display: block;
   margin: 8px;
@@ -78,3 +79,48 @@ margin: 0px 0px 15px 15px;
 float: left;
 margin: 0px 0px 15px 15px;
 } 
+=======
+nav {
+  background-color: #FAF9EE;
+  color: #874D63;
+  font-family: sans-serif;  
+  text-align: center; 
+  padding-bottom: 20px; 
+  padding-top: 10px;
+}
+
+nav ol li {
+  margin: 20px;
+  padding: 14px;
+  text-align: center;
+  display: inline;
+  color:#874D63;
+  font-size: 20px; 
+}
+
+a{
+  color:#874D63;
+}
+
+a:visited {
+  color:#A8D2CB;
+}
+
+h1{
+  font-family: sans-serif;
+  font-size: 22px;
+  margin: 20px;
+}
+
+.center{
+  text-align: center;
+  color:#874D63;
+  font-size: 33px;
+  font-family: sans-serif;
+}
+
+.tiny{
+  font-size: 12px;
+  font-family: cursive;
+}
+>>>>>>> 77c5cf9028431bf25ff7a8f22919bd0944ade8a8
