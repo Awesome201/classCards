@@ -54,27 +54,27 @@ section {
 }
 
 #firstcard {
-  float: right;
+  float: left;
   margin: 0px 0px 15px 15px;
 }
 
 #secondcard {
-float: right;
+float: left;
 margin: 0px 0px 15px 15px;
 }
 
 #thirdcard {
-float: right;
+float: left;
 margin: 0px 0px 15px 15px;
   
 }
 
 #fourthcard {
-float: right;
+float: left;
 margin: 0px 0px 15px 15px;
 }
 
 #fifthcard {
-float: right;
+float: left;
 margin: 0px 0px 15px 15px;
 } 
