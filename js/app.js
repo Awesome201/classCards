@@ -13,6 +13,7 @@ function checkLocalStorage() {
     localStorage.userName = JSON.stringify();
   } else {
     userName = JSON.parse(localStorage.userName);
+
     var navOlElement = document.getElementById('conditional-nav');
     
     var navliElement = document.createElement('li');
