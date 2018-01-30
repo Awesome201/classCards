@@ -24,6 +24,7 @@ A few reasons:
 * Jon Duckett JavaScript & jQuery book
 * Source for template to create User-Scenarios: UserZoom website
 https://www.userzoom.com/user-experience-research/a-simple-template-for-writing-usability-tasks/
+* Source for multichoice option as an input from MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
 * Help from my instructor, classmates and TAs
 
 ## Use:

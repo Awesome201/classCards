@@ -7,7 +7,7 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage,intereste
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
   this.userColor = userColor;
-  this.knownLanguage = knownLanguage;
+  this.knownLanguage = [];
   this.interestedLanguage = interestedLanguage;
   Profile.allProfiles.push(this);
 }
