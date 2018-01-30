@@ -2,84 +2,7 @@
 butter #F2D387
 Salmon #C3866B
 eggplant #874D63 */
-<<<<<<< HEAD
-body {
-  display: block;
-  margin: 8px;
-}
 
-.card {
-  box-shadow: 0 4px 24px 0 hsla(125, 95%, 47%, 0.288);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-}
-
-.title {
-    color: hsl(0, 0%, 5%);
-    font-size: 18px;
-}
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(9, 5, 238, 0.582);
-}
-
-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: rgb(9, 231, 58);
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-}
-
-button:hover, a:hover {
-    opacity: 0.7;
-}
-
-section {
-  width:500px;
-  clear:both;
-}
-
-#firstcard {
-  float: left;
-  margin: 0px 0px 15px 15px;
-}
-
-#secondcard {
-float: left;
-margin: 0px 0px 15px 15px;
-}
-
-#thirdcard {
-float: left;
-margin: 0px 0px 15px 15px;
-  
-}
-
-#fourthcard {
-float: left;
-margin: 0px 0px 15px 15px;
-}
-
-#fifthcard {
-float: left;
-margin: 0px 0px 15px 15px;
-} 
-=======
 nav {
   background-color: #FAF9EE;
   color: #874D63;
@@ -123,4 +46,3 @@ h1{
   font-size: 12px;
   font-family: cursive;
 }
->>>>>>> 77c5cf9028431bf25ff7a8f22919bd0944ade8a8
