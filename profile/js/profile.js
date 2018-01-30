@@ -1,9 +1,9 @@
 'use strict';
 
-if (localStorage.getItem('userName') === null) {
-  alert('Not logged in, redirecting to home page.');
-  window.location = '../index.html';
-}
+// if (localStorage.getItem('userName') === null) {
+//   alert('Not logged in, redirecting to home page.');
+//   window.location = '../index.html';
+// }
 
 Profile.allProfiles = [];
 
@@ -12,12 +12,12 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage,intereste
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
   this.userColor = userColor;
-  this.knownLanguage = [];
+  this.knownLanguage = knownLanguage;
   this.interestedLanguage = interestedLanguage;
   Profile.allProfiles.push(this);
 }
 
-new Profile('Ramon','','Cars','Red','JS,CSS,HTML','Python');
+new Profile('Ramon','../img/monk.png','Cars','Red','JS,CSS,HTML','Python');
 
 var userForm = document.getElementById('newUserForm');
 
@@ -27,13 +27,21 @@ function addNewUser(event) {
   var newUserAvatar = event.target.userAvatar.value;
   var newUserHobby = event.target.userHobby.value;
   var newUserColor = event.target.userColor.value;
-  var newKnownLanguage = event.target.knownLanguage.value;
-  var newInterestedLanguage = event.target.interestedLanguage.value;
+  var newKnownLanguage = [];
+  var newInterestedLanguage = [];
+
+  for(var i = 0; i < event.target.language.length; i++){
+    newKnownLanguage.push(event.target.language[i].value);
+  }
+
+  for(var j = 0; j < event.target.learnLanguage.length; j++){
+    newInterestedLanguage.push(event.target.learnLanguage[j].value);
+  }
 
   new Profile(newUserName,newUserAvatar,newUserHobby,newUserColor,newKnownLanguage,newInterestedLanguage);
 
-  for(var i in Profile.allProfiles) {
-    localStorage.setItem('newUserName',JSON.stringify(Profile.allProfiles[i]));
+  for(var k in Profile.allProfiles) {
+    localStorage.setItem('newUserName',JSON.stringify(Profile.allProfiles[k]));
   }
 }
 

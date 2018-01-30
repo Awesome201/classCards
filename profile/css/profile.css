@@ -17,6 +17,6 @@ p{
 label,input{
   display: block;
 }
-#multichoice{
+#multichoice n{
   display:inline;
 }
