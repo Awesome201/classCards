@@ -4,7 +4,7 @@ body {
 }
 
 .card {
-  box-shadow: 0 4px 24px 0 hsla(125, 95%, 47%, 0.288);
+  box-shadow: 0 4px 24px 0 #03950f49;
   max-width: 300px;
   margin: auto;
   text-align: center;
@@ -17,7 +17,7 @@ body {
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(9, 5, 238, 0.582);
+    box-shadow: 0 8px 16px 0 #0905ee94;
 }
 
 button {
@@ -25,11 +25,9 @@ button {
     outline: 0;
     display: inline-block;
     padding: 8px;
-    color: rgb(9, 231, 58);
-    background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 87%;
     font-size: 18px;
     margin-bottom: 20px;
 }
@@ -49,28 +47,28 @@ section {
   clear:both;
 }
 
-#firstcard {
+#first-card {
   float: left;
   margin: 0px 0px 15px 15px;
 }
 
-#secondcard {
+#second-card {
 float: left;
 margin: 0px 0px 15px 15px;
 }
 
-#thirdcard {
+#third-card {
 float: left;
 margin: 0px 0px 15px 15px;
   
 }
 
-#fourthcard {
+#fourth-card {
 float: left;
 margin: 0px 0px 15px 15px;
 }
 
-#fifthcard {
+#fifth-card {
 float: left;
 margin: 0px 0px 15px 15px;
 } 

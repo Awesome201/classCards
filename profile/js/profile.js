@@ -1,5 +1,10 @@
 'use strict';
 
+if (localStorage.getItem('userName') === null) {
+  alert('Not logged in, redirecting to home page.');
+  window.location = '../index.html';
+}
+
 Profile.allProfiles = [];
 
 function Profile(userName,userAvatar,userHobby,userColor,knownLanguage,interestedLanguage) {
@@ -26,9 +31,9 @@ function addNewUser(event) {
   var newInterestedLanguage = event.target.interestedLanguage.value;
 
   new Profile(newUserName,newUserAvatar,newUserHobby,newUserColor,newKnownLanguage,newInterestedLanguage);
-  
+
   for(var i in Profile.allProfiles) {
-    localStorage.setItem(newUserName,JSON.stringify(Profile.allProfiles[i]));
+    localStorage.setItem('newUserName',JSON.stringify(Profile.allProfiles[i]));
   }
 }
 

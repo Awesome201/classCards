@@ -1,7 +1,36 @@
+fieldset{
+  text-align: left;
+  margin: 30px;
+  color:White;
+  font-size: 16px;
+<<<<<<< HEAD
+}
+
+p{
+  margin:20px;  
+}
+#avatar-display{
+  text-align: center;
+  display: inline;
+}
+
 label,input{
   display: block;
 }
 
-img {
+=======
+} 
+
+p{
+  margin:20px;  
+}
+
+#avatar li{
+  text-align: center;
   display: inline-block;
 }
+
+label,input{
+  display: block;
+}
+>>>>>>> 51d7af535b27a8035c94095883ab2702e5287515

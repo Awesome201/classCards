@@ -13,7 +13,7 @@ nav {
 }
 
 nav ol li {
-  margin: 20px;
+  margin: 16px;
   padding: 14px;
   text-align: center;
   display: inline;
@@ -32,7 +32,7 @@ a:visited {
 h1{
   font-family: sans-serif;
   font-size: 22px;
-  margin: 20px;
+  margin: 30px;
 }
 
 .center{
@@ -45,4 +45,69 @@ h1{
 .tiny{
   font-size: 12px;
   font-family: cursive;
+}
+
+section.footer {
+  background-color: #FAF9EE;
+  color:  #874D63;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 15px;
+  text-align: center;
+  margin-top: 40px;
+}
+section.footer p{
+  margin:10px;  
+  font-family: cursive;
+}
+
+body{
+  background-color: #A8D2CB;
+  color: white;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+fieldset{
+  text-align: center;
+  margin: 30px;
+  color:White;
+  font-size: 16px;
+}
+
+label,input{
+  margin: 10px;
+}
+
+legend{
+  padding: 10px;
+  font-size: 18px;
+}
+
+button{
+  border-radius: 15px;
+  margin:20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #F2D387;
+  color: #874D63;
+  font-size: 14px;
+}
+
+#loginForm{
+  margin: 20px;
+}
+
+img {
+ margin: 30px;
+}
+
+p{
+  line-height: 1.5rem;
+  margin-left: 30px;
+  margin-top:10px;
+  margin-right:30px;
+  margin-bottom: 10px;  
 }

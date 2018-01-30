@@ -9,13 +9,12 @@ var formElLoginForm = document.getElementById('loginForm');
 
 //if no local, create it. else, use it
 function checkLocalStorage() {
-  if (!localStorage.userName) {
-    localStorage.userName = JSON.stringify();
+  if (localStorage.getItem('userName') === null) {
+    return;
   } else {
     userName = JSON.parse(localStorage.userName);
 
     var navOlElement = document.getElementById('conditional-nav');
-    
     var navliElement = document.createElement('li');
     var navaElement = document.createElement('a');
     navliElement.id = 'nav-link';
@@ -33,7 +32,6 @@ function checkLocalStorage() {
     navOlElement.appendChild(navliElement);
   }
 }
-
 //set the value to user input and save to local storage
 function handleLogin (e) {
   e.preventDefault();
