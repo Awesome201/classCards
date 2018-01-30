@@ -13,7 +13,7 @@ nav {
 }
 
 nav ol li {
-  margin: 20px;
+  margin: 16px;
   padding: 14px;
   text-align: center;
   display: inline;
@@ -59,4 +59,44 @@ section.footer {
 section.footer p{
   margin:10px;  
   font-family: cursive;
+}
+
+body{
+  background-color: #A8D2CB;
+  color: white;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+fieldset{
+  text-align: center;
+  margin: 30px;
+  color:White;
+  font-size: 16px;
+}
+
+label,input{
+  margin: 1 0px;
+}
+
+
+legend{
+  padding: 10px;
+  font-size: 18px;
+}
+
+button{
+  border-radius: 15px;
+  margin:20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #F2D387;
+  color: #874D63;
+  font-size: 14px;
+}
+
+#loginForm{
+  margin: 20px;
 }
