@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var firstCard = document.getElementById('first-card');
 var firstCard = document.getElementById('second-card');
