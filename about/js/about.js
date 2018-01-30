@@ -39,15 +39,15 @@ function createCard(profileObj) {
     // Set its contents to the userName
     h2El.textContent = profileObj.userName;
 
-    // appened the h2 to the div
-    divElFront.appendChild(h2El);
+    // appened the h2 to the section
+    sectionElFront.appendChild(h2El);
 
     // Create the img elemnt for the avatar
     var imgEl = document.createElement('img');
     imgEl.src = profileObj.userAvatar;
     imgEl.alt = profileObj.userName;
-    divElFront.appendChild(imgEl);
-    divElFlipper.appendChild(divElFront);
+    sectionElFront.appendChild(imgEl);
+    sectionElFlipper.appendChild(sectionElFront);
 
     // add interests
     // Create the ul to house the interests
@@ -56,10 +56,10 @@ function createCard(profileObj) {
     ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
     ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
     ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
-    divElBack.appendChild(ulEl);
-    divElFlipper.appendChild(divElBack);
-    divElFlipContainer.appendChild(divElFlipper);
-    return divElFlipContainer;
+    sectionElBack.appendChild(ulEl);
+    sectionElFlipper.appendChild(sectionElBack);
+    sectionElFlipContainer.appendChild(sectionElFlipper);
+    return sectionElFlipContainer;
   }
 
 // create new instances of the Profile object
