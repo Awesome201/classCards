@@ -3,10 +3,9 @@
 // retrieve the 'card' class from the DOM.
 var cardElement = document.getElementById('all-cards');
 
-// this holds all the profiles and any new profiles will also be held in this array.
+// this holds all the profiles
+// any new profiles will also be held in this array.
 Profile.allProfiles = [];
-
-
 
 // this holds all the properties for each Profile that will be generated. 
 function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage) {
@@ -19,21 +18,23 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
   Profile.allProfiles.push(this);
 }
 
-
+// this function will call ALL cards that have been created and are stored in our Profile.allProfiles array.
 function createAllCards() {
   for(var i in Profile.allProfiles) {
     Profile.allProfiles[i].render();
   }
 }
 
+// this function calls ONLY our 5 cards to be used on our About Us page.
 function createOnlyOurAboutUsCards() {
-  var i = 0;
-  for (var i = 0; onlyOurAboutUsCards > Profile.allProfiles[4]; onlyOurAboutUsCards++) {
+  for (var i = 0; i < 5; i++) {
     Profile.allProfiles[i].render();
   }
 }
 
-// append all these to the container rather than a UL...considering the use of buttons and paragraph and how they are not list items.
+// create Html elements 
+// tell the Html to get each property value from the Profile object constructor in the appropriate element
+// attach the element in the appropriate location in the Html.
 Profile.prototype.render = function() {
   var divMain = document.createElement('div');
   divMain.className = 'card';
@@ -80,15 +81,13 @@ Profile.prototype.render = function() {
   divHoldTheCards.appendChild(aboutUsDescriptionEl);
 }
   
-  // create new instances of the Profile object
+  // new instances of the Profile object constructor
   new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
   new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaScript');
   new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
   new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
   new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
   
-  // have those new instances display in the about.html
-  
   createOnlyOurAboutUsCards();
 
-  //how do I make the new Profile object ex: first-card, second-card etc. appear on html?  We used table for salmon so do I make each instance of a card a table?
+ 
