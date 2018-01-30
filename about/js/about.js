@@ -1,7 +1,7 @@
 'use strict';
 
 // retrieve the 'card' class from the DOM.
-var cardElement = document.getElementByClass('card');
+var cardElement = document.getElementById('all-cards');
 
 // this holds all the profiles and any new profiles will also be held in this array.
 Profile.allProfiles = [];
@@ -60,19 +60,19 @@ function createCard(profileObj) {
     sectionElFlipper.appendChild(sectionElBack);
     sectionElFlipContainer.appendChild(sectionElFlipper);
     return sectionElFlipContainer;
-
-    createCard(Profile.allProfiles[0]);
   }
-
-// create new instances of the Profile object
-new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
-new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaScript');
-new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
-new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
-new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
-
-
-// have those new instances display in the about.html
-
-
-//how do I make the new Profile object ex: first-card, second-card etc. appear on html?  We used table for salmon so do I make each instance of a card a table?
+  
+  // create new instances of the Profile object
+  new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
+  new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaScript');
+  new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
+  new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
+  new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
+  
+  
+  // have those new instances display in the about.html
+  
+  
+      createCard(Profile.allProfiles[0]);
+  
+  //how do I make the new Profile object ex: first-card, second-card etc. appear on html?  We used table for salmon so do I make each instance of a card a table?
