@@ -32,7 +32,7 @@ a:visited {
 h1{
   font-family: sans-serif;
   font-size: 22px;
-  margin: 20px;
+  margin: 30px;
 }
 
 .center{
@@ -79,7 +79,6 @@ label,input{
   margin: 1 0px;
 }
 
-
 legend{
   padding: 10px;
   font-size: 18px;
@@ -99,4 +98,16 @@ button{
 
 #loginForm{
   margin: 20px;
+}
+
+img {
+ margin: 30px;
+}
+
+p{
+  line-height: 1.5rem;
+  margin-left: 30px;
+  margin-top:10px;
+  margin-right:30px;
+  margin-bottom: 10px;  
 }
