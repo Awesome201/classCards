@@ -31,6 +31,11 @@ https://www.userzoom.com/user-experience-research/a-simple-template-for-writing-
 
 This is a way for Code Fellow students to find others who have shared interest in a hobby and possibly a coding language.
 
+## Research
+
+- https://davidwalsh.name/css-flip
+- http://css3.bradshawenterprises.com/flip/
+
 ## Other information:
 
 

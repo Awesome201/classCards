@@ -1,5 +1,10 @@
 'use strict';
 
+if (localStorage.getItem('userName') === null) {
+  alert('Not logged in, redirecting to home page.');
+  window.location = '../index.html';
+}
+
 Profile.allProfiles = [];
 
 function Profile(userName,userAvatar,userHobby,userColor,knownLanguage,interestedLanguage) {
