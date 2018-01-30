@@ -2,8 +2,10 @@
 
 // declare global variables 
 var mainEl = document.getElementById('content');
+
 // Add obj array
 var matchArray = [];
+var missMatchArray = [];
 Profile.allProfiles = [];
 
 // Profile obj constructor
@@ -18,9 +20,9 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
 }
 
 // create test instance of objects
-new Profile('kevin', '../img/250px-280Ralts.png', 'martial arts', 'green', 'cSharp', 'javascript');
-new Profile('Ramone', 'rogue', 'martial arts', 'green', 'cSharp', 'javascript');
-new Profile('Zach', 'rogue', 'martial arts', 'green', 'cSharp', 'javascript');
+new Profile('Kevin', '../img/250px-280Ralts.png', 'martial arts', 'green', 'cSharp', 'javascript');
+new Profile('Ramone', 'rogue', 'martial arts', 'blue', 'cSharp', 'javascript');
+new Profile('Zach', 'rogue', 'martial arts', 'white', 'java', 'javascript');
 
 // Li builder
 function buildLiEl (promptValue, displayValue) {
@@ -36,28 +38,30 @@ function matchFinder (object, compareArray) {
     if (object.userColor === compareArray[i].userColor) {
       matchNumber++;
     }
-  }
-  for (var j in compareArray) {
-    if (object.userHobby === compareArray[j].userHobby) {
+    if (object.userHobby === compareArray[i].userHobby) {
       matchNumber++;
     }
-  }
-  for (var k in compareArray) {
-    if (object.knownLanguage === compareArray[k].knownLanguage) {
+    if (object.knownLanguage === compareArray[i].knownLanguage) {
       matchNumber++;
     }
-  }
-  for (var l in compareArray) {
-    if (object.interestedLanguage === compareArray[l].interestedLanguage) {
+    if (object.interestedLanguage === compareArray[i].interestedLanguage) {
       matchNumber++;
     }
+    console.log(matchNumber);
+    // Object literal to hold the index of the object in allProfiles and the number of matches
+    var matchAndNumber = {
+      id: i,
+      matches: matchNumber
+    };
+    if (matchNumber >= 3) {
+      matchArray.push(matchAndNumber);
+    } else {
+      missMatchArray.push(matchAndNumber);
+    }
+    matchNumber = 0;
   }
-  var matchAndNumber = {
-    id: i,
-    matches: matchNumber
-  };
-  matchArray.push(matchAndNumber);
 }
+
 // Create and appened card
 function createCard (profileObj) {
   var divEl = document.createElement('div'); // Create the div that houses the card
@@ -78,4 +82,14 @@ function createCard (profileObj) {
   divEl.appendChild(ulEl);
   return divEl;
 }
-mainEl.appendChild(createCard(Profile.allProfiles[0]));
+
+//Display the matching cards
+function updateDisplay (matchArray) {
+  for (var i in matchArray) {
+    mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
+  }
+}
+
+// mainEl.appendChild(createCard(Profile.allProfiles[0]));
+matchFinder(Profile.allProfiles[0], Profile.allProfiles);
+updateDisplay(matchArray);
