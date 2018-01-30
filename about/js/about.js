@@ -7,12 +7,14 @@ var firstCard = document.getElementById('fourth-card');
 var firstCard = document.getElementById('fifth-card');
 
 
-function Profile(userName, favoriteHobby, colorChoice, languageKnown, languagesToLearn ) {
+function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage) {
   this.userName = userName;
-  this.favoriteHobby = favoriteHobby;
-  this.colorChoice = colorChoice;
-  this.languageKnown = languageKnown;
-  this.languagesToLearn = languagesToLearn;
+  this.userAvatar = userAvatar;
+  this.userHobby = userHobby;
+  this.userColor = userColor;
+  this.knownLanguage = knownLanguage;
+  this.interestedLanguage = interestedLanguage;
+  Profile.allProfiles.push(this);
 }
 
 //how do I make the new Profile object ex: first-card, second-card etc. appear on html?  We used table for salmon so do I make each instance of a card a table?
