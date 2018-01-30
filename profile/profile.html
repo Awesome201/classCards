@@ -5,23 +5,52 @@
   <title>Profile</title>
   <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="css/results.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/profile.css" />
+  <script src="../jscolor.min.js"></script>
 </head>
 <body>
   <nav>
     <img src = "https://placehold.it/200x100">
     <h1 class="center">Class Cards</h1>
     <ol>
-      <li id="nav-link"><a href="index.html">Home/Login</a></li>
-      <li id="nav-link"><a href="about/about.html">About CC Creators</a></li>
-      <li id="nav-link"><a href="profile/profile.html">Edit Your Profile</a></li>
-      <li id="nav-link"><a href="results/results.html">See Your Class Cards</a></li>
+      <li id="nav-link"><a href="../index.html">Home/Login</a></li>
+      <li id="nav-link"><a href="../about/about.html">About CC Creators</a></li>
+      <li id="nav-link"><a href="../profile/profile.html">Edit Your Profile</a></li>
+      <li id="nav-link"><a href="../results/results.html">See Your Class Cards</a></li>
       <li class = "tiny" id="nav-link"><i>>>Currently on Profile page</i></li>
     </ol>
   </nav>
-  <header></header>
-  <main></main>
-  <footer></footer>
-  <script src="js/results.js"></script>
+  <form id="newUserForm">
+    <fieldset>
+      <legend>Fill out the questions below</legend>
+
+      <label for="userName">Enter your name.</label>
+      <input name="userName" type="text">
+
+      <label for="userAvatar">Choose your avatar.</label>
+      <img src="../img/male_avatar.jpg">
+      <img src="../img/250px-280Ralts.png">
+      <select name="userAvatar" type="text">
+        <option value="pic1">South Park Avatar</option>
+        <option value="pic2">Raftz</option>
+      </select>
+      
+      <label for="userColor">Choose your color</label>
+      <input name="userColor" class="jscolor" value="">
+      
+      <label for="userHobby">What's your hobby?</label>
+      <input name="userHobby" type="text">
+
+      <label for="knownLanguage">What coding languages do you know?</label>
+      <input name="knownLanguage" type="text">
+
+      <label for="interestedLanguage">What coding languages are you interested in knowing?</label>
+      <input name="interestedLanguage" type="text">
+
+      <button id="addUser">Submit</button>
+      <!-- <button id="addUser"><a href="../results/results.html">Submit</a></button> -->
+    </fieldset>
+  </form>
+  <script src="js/profile.js"></script>
 </body>
 </html>
