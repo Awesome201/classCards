@@ -1,11 +1,17 @@
 'use strict';
 
+if (localStorage.getItem('userName') === null) {
+  alert('Not logged in, redirecting to home page.');
+  window.location = '../index.html';
+}
+
 // declare global variables
 var mainEl = document.getElementById('content');
 
 // Add obj array
 var matchArray = [];
 var missMatchArray = [];
+var newUserProfiles;
 Profile.allProfiles = [];
 
 // Profile obj constructor
@@ -19,10 +25,23 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
   Profile.allProfiles.push(this);
 }
 
+// local storage test array
+function localStorageTestArray () {
+  new Profile('test', '../img/fighter.png', 'martial arts', 'green', 'java', 'javascript');
+  localStorage.profiles = JSON.stringify(Profile.allProfiles);
+}
+
+// Local storage check
+function localStorageHandler () {
+  newUserProfiles = JSON.parse(localStorage.profiles);
+}
+
 // create test instance of objects
-new Profile('Kevin', '../img/250px-280Ralts.png', 'martial arts', 'green', 'cSharp', 'javascript');
-new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'blue', 'cSharp', 'javascript');
-new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
+function builtInProfiles () {
+  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', 'green', 'cSharp', 'javascript');
+  new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', 'cSharp', 'javascript');
+  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
+}
 
 // Li builder
 function buildLiEl (promptValue, displayValue) {
@@ -62,6 +81,7 @@ function matchFinder (object, compareArray) {
   }
 }
 
+
 // Create and appened card
 function createCard (profileObj) {
   var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
@@ -100,6 +120,8 @@ function updateDisplay (matchArray) {
   }
 }
 
-// mainEl.appendChild(createCard(Profile.allProfiles[0]));
-matchFinder(Profile.allProfiles[0], Profile.allProfiles);
+localStorageTestArray();
+localStorageHandler();
+builtInProfiles();
+matchFinder(newUserProfiles[0], Profile.allProfiles);
 updateDisplay(matchArray);

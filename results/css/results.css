@@ -17,10 +17,11 @@ main {
 .flipContainer {
   float: left;
   width: 300px;
-  height: 300px;
+  height: 350px;
   perspective: 1000;
   z-index: 1;
   margin: 30px 30px 0 0;
+  color: black;
 }
 
 main div:nth-child(3n) {
@@ -32,6 +33,8 @@ main div:nth-child(3n) {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.6s linear;
+  background-color: #FAF9EE;
+  border: 5px ridge white;
 }
 
 /* flip the pane when hovered */
@@ -46,7 +49,6 @@ main div:nth-child(3n) {
   height: 100%;
   backface-visibility: hidden;
   text-align: center;
-  background-color: #FAF9EE;
 }
 
 .front h2 {
@@ -66,4 +68,5 @@ main div:nth-child(3n) {
 main img {
   max-height: 100%;
   max-width: 100%;
+  margin: 0;
 }
