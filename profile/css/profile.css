@@ -3,17 +3,17 @@ fieldset{
   margin: 30px;
   color:White;
   font-size: 16px;
-}
+} 
 
 p{
   margin:20px;  
 }
-#avatar-display{
+
+#avatar li{
   text-align: center;
-  display: inline;
+  display: inline-block;
 }
 
 label,input{
   display: block;
 }
-
