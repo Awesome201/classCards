@@ -24,13 +24,13 @@ function createCard(profileObj) {
   for (var createCard in Profile.allProfiles.length) {
 
     // Set the section ID to the section
-    sectionElFlipContainer.setAttribute('id', profileObj.userName + 'div');
+    sectionElFlipContainer.setAttribute('id', profileObj.userName + 'li');
     sectionElFlipContainer.setAttribute('class', 'flipContainer');
-    var sectionElFlipper = document.createElement('div');
+    var sectionElFlipper = document.createElement('li');
     sectionElFlipper.setAttribute('class', 'flipper');
-    var sectionElFront = document.createElement('div');
+    var sectionElFront = document.createElement('li');
     sectionElFront.setAttribute('class', 'front');
-    var sectionElBack = document.createElement('div');
+    var sectionElBack = document.createElement('li');
     sectionElBack.setAttribute('class', 'back');
 
     // Create the h2 element
@@ -60,6 +60,8 @@ function createCard(profileObj) {
     sectionElFlipper.appendChild(sectionElBack);
     sectionElFlipContainer.appendChild(sectionElFlipper);
     return sectionElFlipContainer;
+
+    createCard(Profile.allProfiles[0]);
   }
 
 // create new instances of the Profile object
@@ -68,6 +70,7 @@ new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaSc
 new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
 new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
 new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
+
 
 // have those new instances display in the about.html
 
