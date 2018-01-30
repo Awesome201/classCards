@@ -1,10 +1,11 @@
 'use strict';
 
-// var firstCard = document.getElementById('first-card');
-// var firstCard = document.getElementById('second-card');
-// var firstCard = document.getElementById('third-card');
-// var firstCard = document.getElementById('fourth-card');
-// var firstCard = document.getElementById('fifth-card');
+// retrieve the 'card' class from the DOM.
+var cardElement = document.getElementByClass('card');
+
+// this holds all the profiles and any new profiles will also be held in this array.
+Profile.allProfiles = [];
+
 
 // this holds all the properties for each Profile that will be generated. 
 function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage) {
@@ -16,6 +17,50 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
   this.interestedLanguage = interestedLanguage;
   Profile.allProfiles.push(this);
 }
+
+// this is a function that when called, will append the appropriate element to the section of the DOM and assign the appropriate userName, img, hobby, knownLanguage and interestedLanguage value to the corresponding element that was just created.
+
+function createCard(profileObj) {
+  for (var createCard in Profile.allProfiles.length) {
+
+    // Set the section ID to the section
+    sectionElFlipContainer.setAttribute('id', profileObj.userName + 'div');
+    sectionElFlipContainer.setAttribute('class', 'flipContainer');
+    var sectionElFlipper = document.createElement('div');
+    sectionElFlipper.setAttribute('class', 'flipper');
+    var sectionElFront = document.createElement('div');
+    sectionElFront.setAttribute('class', 'front');
+    var sectionElBack = document.createElement('div');
+    sectionElBack.setAttribute('class', 'back');
+
+    // Create the h2 element
+    var h2El = document.createElement('h2');
+
+    // Set its contents to the userName
+    h2El.textContent = profileObj.userName;
+
+    // appened the h2 to the div
+    divElFront.appendChild(h2El);
+
+    // Create the img elemnt for the avatar
+    var imgEl = document.createElement('img');
+    imgEl.src = profileObj.userAvatar;
+    imgEl.alt = profileObj.userName;
+    divElFront.appendChild(imgEl);
+    divElFlipper.appendChild(divElFront);
+
+    // add interests
+    // Create the ul to house the interests
+    var ulEl = document.createElement('ul');
+    ulEl.appendChild(buildLiEl('Hobby: ', profileObj.userHobby));
+    ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
+    ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
+    ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
+    divElBack.appendChild(ulEl);
+    divElFlipper.appendChild(divElBack);
+    divElFlipContainer.appendChild(divElFlipper);
+    return divElFlipContainer;
+  }
 
 // create new instances of the Profile object
 new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
