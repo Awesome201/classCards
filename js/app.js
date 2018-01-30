@@ -14,6 +14,7 @@ function checkLocalStorage() {
   } else {
     userName = JSON.parse(localStorage.userName);
 
+
     var navOlElement = document.getElementById('conditional-nav');
     
     var navliElement = document.createElement('li');
@@ -33,7 +34,6 @@ function checkLocalStorage() {
     navOlElement.appendChild(navliElement);
   }
 }
-
 //set the value to user input and save to local storage
 function handleLogin (e) {
   e.preventDefault();
