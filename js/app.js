@@ -19,7 +19,7 @@ function checkLocalStorage() {
     var navliElement = document.createElement('li');
     var navaElement = document.createElement('a');
 
-    navliElement.class = 'nav-link';
+    navliElement.id = 'nav-link';
     navaElement.textContent = 'Edit Your Profile';
     navaElement.href = 'profile/profile.html';
     navliElement.appendChild(navaElement);
