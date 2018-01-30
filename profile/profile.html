@@ -24,19 +24,11 @@
     <fieldset>
       <legend>Thank you for filling out the below questions</legend>
 
-      <label for="userName">Enter your name</label>
+      <label for="userName">Enter your first name</label>
       <input name="userName" type="text">
 
       <label class="avatar-display" for="userAvatar">Choose your avatar from the options below</label>
-        <ul id="avatar">
-          <li><img src="../img/cleric.jpg" alt="Cleric"><p>Cleric</p></li>
-          <li><img src="../img/druid.jpg" alt="Druid"><p>Druid</p></li>
-          <li><img src="../img/fighter.png" alt="Fighter"><p>Fighter</p></li>
-          <li><img src="../img/monk.png" alt ="Monk"><p>Monk</p></li>
-          <li><img src="../img/rogue.jpg" alt = "Rogue"><p>Rogue</p></li>
-          <li><img src="../img/wizzard.jpg" alt = "Wizard"><p>Wizard</p></li>
-        </ul>
-      
+
       <select name="userAvatar" type="text">
         <option value="pic1">Cleric </option>
         <option value="pic2">Druid</option>
@@ -45,7 +37,14 @@
         <option value="pic5">Rogue   </option>
         <option value="pic6">Wizard </option>
       </select>
-      
+        <ul id="avatar">
+          <li><img src="../img/cleric.jpg" alt="Cleric"><p>Cleric</p></li>
+          <li><img src="../img/druid.jpg" alt="Druid"><p>Druid</p></li>
+          <li><img src="../img/fighter.png" alt="Fighter"><p>Fighter</p></li>
+          <li><img src="../img/monk.png" alt ="Monk"><p>Monk</p></li>
+          <li><img src="../img/rogue.jpg" alt = "Rogue"><p>Rogue</p></li>
+          <li><img src="../img/wizzard.jpg" alt = "Wizard"><p>Wizard</p></li>
+        </ul> 
       <label for="userColor">Choose your color</label>
       <input name="userColor" class="jscolor" value="">
       
@@ -53,22 +52,28 @@
       <input name="userHobby" type="text">
 
       <label for="knownLanguage">What coding languages do you know?</label>
-      <input id="multichoice" multiple="knownLanguage" type="radio" value="Javascript">
-      <input multiple="knownLanguage" type="radio" value="CSS">CSS
-      <input multiple="knownLanguage" type="radio" value="HTML">
-      <input multiple="knownLanguage" type="radio" value="Java">
-      <input multiple="knownLanguage" type="radio" value="Python">
-      <input multiple="knownLanguage" type="radio" value=".NET">
-      <input multiple="knownLanguage" type="radio" value="C#">
-      <input multiple="knownLanguage" type="radio" value="SQL">
-      <input multiple="knownLanguage" type="radio" value="Ruby">
-      <input multiple="knownLanguage" type="radio" value="PHP">
-      <input multiple="knownLanguage" type="radio" value="iOS">  <input multiple="knownLanguage" type="radio" value="C++">
-
+      <input type="checkbox" name="language" value="JavaScript"> JavaScript<br>
+      <input type="checkbox" name="language" value="HTML"> HTML<br>
+      <input type="checkbox" name="language" value="CSS"> CSS<br>
+      <input type="checkbox" name="language" value="Java"> Java<br>
+      <input type="checkbox" name="language" value="Python"> Python<br>
+      <input type="checkbox" name="language" value="C#"> C#<br>
+      <input type="checkbox" name="language" value="C++"> C++<br>
+      <input type="checkbox" name="language" value="iOS"> iOS<br>
+      <input type="checkbox" name="language" value="Android"> Android<br>
+     
       <label for="interestedLanguage">What coding languages are you interested in learning?</label>
-      <input name="interestedLanguage" type="text">
+      <input type="checkbox" name="learnLanguage" value="JavaScript"> JavaScript<br>
+      <input type="checkbox" name="learnLanguage" value="HTML"> HTML<br>
+      <input type="checkbox" name="learnLanguage" value="CSS"> CSS<br>
+      <input type="checkbox" name="learnLanguage" value="Java"> Java<br>
+      <input type="checkbox" name="learnLanguage" value="Python"> Python<br>
+      <input type="checkbox" name="learnLanguage" value="C#"> C#<br>
+      <input type="checkbox" name="learnLanguage" value="C++"> C++<br>
+      <input type="checkbox" name="learnLanguage" value="iOS"> iOS<br>
+      <input type="checkbox" name="learnLanguage" value="Android"> Android<br>
 
-      <button id="addUser">Submit</button>
+      <button id="addUser" type="submit">Submit</button>
       <!-- <button id="addUser"><a href="../results/results.html">Submit</a></button> -->
     </fieldset>
   </form>
