@@ -14,14 +14,17 @@ function checkLocalStorage() {
   } else {
     userName = JSON.parse(localStorage.userName);
 
+    var navElementLink = document.getElementById('nav-link1');
     var navOlElement = document.getElementById('conditional-nav');
     var navliElement = document.createElement('li');
     var navaElement = document.createElement('a');
+
     navliElement.id = 'nav-link';
     navaElement.textContent = 'Edit Your Profile';
     navaElement.href = 'profile/profile.html';
     navliElement.appendChild(navaElement);
     navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
 
     navliElement = document.createElement('li');
     navaElement = document.createElement('a');
@@ -30,6 +33,7 @@ function checkLocalStorage() {
     navaElement.href = 'results/results.html';
     navliElement.appendChild(navaElement);
     navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
   }
 }
 //set the value to user input and save to local storage
