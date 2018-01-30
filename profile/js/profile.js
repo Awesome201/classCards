@@ -26,9 +26,9 @@ function addNewUser(event) {
   var newInterestedLanguage = event.target.interestedLanguage.value;
 
   new Profile(newUserName,newUserAvatar,newUserHobby,newUserColor,newKnownLanguage,newInterestedLanguage);
-  
+
   for(var i in Profile.allProfiles) {
-    localStorage.setItem(newUserName,JSON.stringify(Profile.allProfiles[i]));
+    localStorage.setItem('newUserName',JSON.stringify(Profile.allProfiles[i]));
   }
 }
 
