@@ -1,6 +1,6 @@
 'use strict';
 
-// declare global variables 
+// declare global variables
 var mainEl = document.getElementById('content');
 
 // Add obj array
@@ -21,8 +21,8 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
 
 // create test instance of objects
 new Profile('Kevin', '../img/250px-280Ralts.png', 'martial arts', 'green', 'cSharp', 'javascript');
-new Profile('Ramone', 'rogue', 'martial arts', 'blue', 'cSharp', 'javascript');
-new Profile('Zach', 'rogue', 'martial arts', 'white', 'java', 'javascript');
+new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'blue', 'cSharp', 'javascript');
+new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
 
 // Li builder
 function buildLiEl (promptValue, displayValue) {
@@ -64,23 +64,33 @@ function matchFinder (object, compareArray) {
 
 // Create and appened card
 function createCard (profileObj) {
-  var divEl = document.createElement('div'); // Create the div that houses the card
-  divEl.setAttribute('id', profileObj.userName + 'div'); // Set the div ID to userNmaediv
-  var h2El = document.createElement('h2'); // Create the h2 element 
+  var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
+  divElFlipContainer.setAttribute('id', profileObj.userName + 'div'); // Set the div ID to the
+  divElFlipContainer.setAttribute('class', 'flipContainer');
+  var divElFlipper = document.createElement('div');
+  divElFlipper.setAttribute('class', 'flipper');
+  var divElFront = document.createElement('div');
+  divElFront.setAttribute('class', 'front');
+  var divElBack = document.createElement('div');
+  divElBack.setAttribute('class', 'back');
+  var h2El = document.createElement('h2'); // Create the h2 element
   h2El.textContent = profileObj.userName; // Set its contents to the userName
-  divEl.appendChild(h2El); // appened the h2 to the div
+  divElFront.appendChild(h2El); // appened the h2 to the div
   var imgEl = document.createElement('img'); // Create the img elemnt fot he avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
-  divEl.appendChild(imgEl);
+  divElFront.appendChild(imgEl);
+  divElFlipper.appendChild(divElFront);
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', profileObj.userHobby));
   ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
   ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
   ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
-  divEl.appendChild(ulEl);
-  return divEl;
+  divElBack.appendChild(ulEl);
+  divElFlipper.appendChild(divElBack);
+  divElFlipContainer.appendChild(divElFlipper);
+  return divElFlipContainer;
 }
 
 //Display the matching cards
