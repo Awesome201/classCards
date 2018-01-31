@@ -1,5 +1,8 @@
 'use strict';
 
+// add the field to each bit of info ex: it should read Favorite Color:   and Language Known:
+// DRY out my elements below using the element.SetAttribute = 'blah', blah;
+
 // retrieve the 'card' class from the DOM.
 var cardElement = document.getElementById('all-cards');
 
@@ -7,12 +10,42 @@ var cardElement = document.getElementById('all-cards');
 // any new profiles will also be held in this array.
 Profile.allProfiles = [];
 
+// dynamically generate the nav based off if the user has visited the site before or not.
+function checkLocalStorage() {
+  if (localStorage.getItem('userName') === null) {
+    return;
+  } else {
+
+    var navElementLink = document.getElementById('nav-link1');
+    var navOlElement = document.getElementById('conditional-nav');
+    var navliElement = document.createElement('li');
+    var navaElement = document.createElement('a');
+
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'Edit Your Profile';
+    navaElement.href = 'profile/profile.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
+
+    navliElement = document.createElement('li');
+    navaElement = document.createElement('a');
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'See Your Class Cards';
+    navaElement.href = 'results/results.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
+  }
+}
+
 // this holds all the properties for each Profile that will be generated. 
-function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage) {
+function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, gitHubLink) {
   this.userName = userName;
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
   this.userColor = userColor;
+  this.gitHubLink = gitHubLink;
   this.knownLanguage = knownLanguage;
   this.interestedLanguage = interestedLanguage;
   Profile.allProfiles.push(this);
@@ -20,7 +53,7 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
 
 // this function will call ALL cards that have been created and are stored in our Profile.allProfiles array.
 function createAllCards() {
-  for(var i in Profile.allProfiles) {
+  for (var i in Profile.allProfiles) {
     Profile.allProfiles[i].render();
   }
 }
@@ -35,13 +68,15 @@ function createOnlyOurAboutUsCards() {
 // create Html elements 
 // tell the Html to get each property value from the Profile object constructor in the appropriate element
 // attach the element in the appropriate location in the Html.
-Profile.prototype.render = function() {
+Profile.prototype.render = function () {
   var divMain = document.createElement('div');
   divMain.className = 'card';
+  divMain.style.backgroundColor = this.userColor;
   cardElement.appendChild(divMain);
 
   var profileImage = document.createElement('img');
   profileImage.src = this.userAvatar;
+  profileImage.className = 'holdsImgs';
   divMain.appendChild(profileImage);
 
   var divHoldTheCards = document.createElement('div');
@@ -50,44 +85,48 @@ Profile.prototype.render = function() {
 
   var userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
+  userNameElement.className = 'userNames';
   divHoldTheCards.appendChild(userNameElement);
 
   var ulEl = document.createElement('ul');
   divHoldTheCards.appendChild(ulEl);
 
   var hobbyElement = document.createElement('li');
-  hobbyElement.textContent = this.userHobby;
+  hobbyElement.textContent = 'Current Hobby: ' + this.userHobby;
   ulEl.appendChild(hobbyElement);
 
-  var userColorElement = document.createElement('li');
-  userColorElement.textContent = this.userColor;
-  ulEl.appendChild(userColorElement);
-
   var knownLanguageElement = document.createElement('li');
-  knownLanguageElement.textContent = this.knownLanguage;
+  knownLanguageElement.textContent = 'Languages Known: ' + this.knownLanguage;
   ulEl.appendChild(knownLanguageElement);
 
   var interestedLanguageElement = document.createElement('li');
-  interestedLanguageElement.textContent = this.interestedLanguage;
+  interestedLanguageElement.textContent = 'Language Interests: ' + this.interestedLanguage;
   ulEl.appendChild(interestedLanguageElement);
+
+  var anchorForGitHubLink = document.createElement('a');
+  anchorForGitHubLink.target = '_blank';
+  anchorForGitHubLink.href = this.gitHubLink;
+  divHoldTheCards.appendChild(anchorForGitHubLink);
 
   var buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
-  buttonElement.textContent = 'Contact Me';
-  divHoldTheCards.appendChild(buttonElement);
+  buttonElement.textContent = 'GitHub: ' + this.userName;
+  anchorForGitHubLink.appendChild(buttonElement);
 
   var aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
   divHoldTheCards.appendChild(aboutUsDescriptionEl);
 }
-  
-  // new instances of the Profile object constructor
-  new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
-  new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaScript');
-  new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
-  new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
-  new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
-  
-  createOnlyOurAboutUsCards();
 
- 
+// new instances of the Profile object constructor
+new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript', 'https://github.com/buphnezz');
+new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#338FCC', 'CSS', 'JavaScript', 'https://github.com/FavoredFortune');
+new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python', 'https://github.com/austincmatteson');
+new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python', 'https://github.com/brickfaced');
+new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript', 'https://github.com/knyghtLyght');
+
+createOnlyOurAboutUsCards();
+
+
+
+
