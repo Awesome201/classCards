@@ -10,6 +10,35 @@ var cardElement = document.getElementById('all-cards');
 // any new profiles will also be held in this array.
 Profile.allProfiles = [];
 
+// dynamically generate the nav based off if the user has visited the site before or not.
+function checkLocalStorage() {
+  if (localStorage.getItem('userName') === null) {
+    return;
+  } else {
+
+    var navElementLink = document.getElementById('nav-link1');
+    var navOlElement = document.getElementById('conditional-nav');
+    var navliElement = document.createElement('li');
+    var navaElement = document.createElement('a');
+
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'Edit Your Profile';
+    navaElement.href = 'profile/profile.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
+
+    navliElement = document.createElement('li');
+    navaElement = document.createElement('a');
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'See Your Class Cards';
+    navaElement.href = 'results/results.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
+  }
+}
+
 // this holds all the properties for each Profile that will be generated. 
 function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, gitHubLink) {
   this.userName = userName;
@@ -63,15 +92,15 @@ Profile.prototype.render = function () {
   divHoldTheCards.appendChild(ulEl);
 
   var hobbyElement = document.createElement('li');
-  hobbyElement.textContent = this.userHobby;
+  hobbyElement.textContent = 'Current Hobby: ' + this.userHobby;
   ulEl.appendChild(hobbyElement);
 
   var knownLanguageElement = document.createElement('li');
-  knownLanguageElement.textContent = this.knownLanguage;
+  knownLanguageElement.textContent = 'Languages Known: ' + this.knownLanguage;
   ulEl.appendChild(knownLanguageElement);
 
   var interestedLanguageElement = document.createElement('li');
-  interestedLanguageElement.textContent = this.interestedLanguage;
+  interestedLanguageElement.textContent = 'Language Interests: ' + this.interestedLanguage;
   ulEl.appendChild(interestedLanguageElement);
 
   var anchorForGitHubLink = document.createElement('a');
@@ -83,7 +112,6 @@ Profile.prototype.render = function () {
   buttonElement.className = 'contact-me';
   buttonElement.textContent = 'GitHub: ' + this.userName;
   anchorForGitHubLink.appendChild(buttonElement);
-
 
   var aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
