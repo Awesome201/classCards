@@ -89,6 +89,7 @@ Profile.prototype.render = function () {
 
   var divElBack = document.createElement('div');
   divElBack.className = 'back';
+  divElBack.style.backgroundColor = this.userColor;
   divElFlipper.appendChild(divElBack);
   
   var profileImage = document.createElement('img');
