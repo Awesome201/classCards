@@ -5,7 +5,6 @@ eggplant #874D63 */
 
 .card { 
   display: table-cell;
-  box-shadow: 0 4px 24px 0 #03950f49;
   max-width: 215px;
   perspective: 1000;
   z-index: 1;
@@ -26,7 +25,6 @@ eggplant #874D63 */
 
 .card:hover .flipper {
  transform: rotateY(180deg);
- box-shadow: -5px 5px 5px #aaa;
 }
 
 .front {
