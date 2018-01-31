@@ -127,6 +127,3 @@ new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 
 
 createOnlyOurAboutUsCards();
 
-
-
-
