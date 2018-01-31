@@ -9,6 +9,10 @@ legend {
   font-size: 40px;
 }
 
+#nav-link{
+ margin:20px;
+}
+
 #avatar img {
   margin-bottom: 0px;
 }
@@ -22,6 +26,7 @@ p{
 #avatar li{
   text-align: center;
   display: inline-block;
+  margin-bottom: 0px;
 }
 
 label {
