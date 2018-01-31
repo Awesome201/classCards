@@ -111,6 +111,15 @@ p{
   margin-right:30px;
   margin-bottom: 10px;  
 }
+section{
+  display: block;
+  padding-top: 25px;
+  text-align: center;
+}
+
+section h2{
+  font-size: 20px;
+}
 
 .flipContainer {
   display: inline-block;
@@ -119,11 +128,13 @@ p{
   height: 350px;
   perspective: 1000;
   z-index: 1;
-  margin: 30px 30px 0 0;
+  margin-left: 801px;
   color: black;
 }
 
 .flipper {
+  display: inline-block;
+  align-content: center;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
