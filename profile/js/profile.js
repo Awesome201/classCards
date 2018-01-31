@@ -25,7 +25,7 @@ var deleteUser = document.getElementById('reset');
 function addNewUser(event) {
   event.preventDefault();
   var newUserName = event.target.userName.value;
-  var newUserAvatar = event.target.userAvatar.value;
+  var newUserAvatar = event.target.userAvatar.src;
   var newUserHobby = event.target.userHobby.value;
   var newUserColor = event.target.userColor.value;
   var newKnownLanguage = [];
@@ -44,10 +44,22 @@ function addNewUser(event) {
   for(var k in Profile.allProfiles) {
     localStorage.setItem('newUserName',JSON.stringify(Profile.allProfiles[k]));
   }
+  window.location = '../results/results.html';
+}
+
+function editUser () {
+  var placeHolderInfo = JSON.parse(localStorage.getItem('newUserName'));
+  var questionOne = document.getElementById('userName');
+  var questionTwo = document.getElementById('');
+  var questionThree = document.getElementById('');
+  var questionFour = document.getElementById('');
+  var questionFive = document.getElementById('');
+  var questionSix = document.getElementById('');
+  return placeHolderInfo;
 }
 
 function resetStorage() {
-  if (confirm('Are you sure you wish to delete your profile? This will kick you back to the signup page.')) {
+  if (confirm('Are you sure you wish to delete your profile? This will return you to home.')) {
     localStorage.clear();
     window.location = '../index.html';
   } else {
@@ -55,5 +67,6 @@ function resetStorage() {
   }
 }
 
+editUser();
 userForm.addEventListener('submit',addNewUser);
 deleteUser.addEventListener('click',resetStorage);
