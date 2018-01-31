@@ -17,13 +17,13 @@ function buildLiEl (promptValue, displayValue) {
 function createCard () {
   var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
   divElFlipContainer.setAttribute('id', 'exampleCard'); // Set the div ID to the
-  divElFlipContainer.setAttribute('class', 'flipContainer');
+  divElFlipContainer.setAttribute('class', 'flipContainer1');
   var divElFlipper = document.createElement('div');
-  divElFlipper.setAttribute('class', 'flipper');
+  divElFlipper.setAttribute('class', 'flipper1');
   var divElFront = document.createElement('div');
-  divElFront.setAttribute('class', 'front');
+  divElFront.setAttribute('class', 'front1');
   var divElBack = document.createElement('div');
-  divElBack.setAttribute('class', 'back');
+  divElBack.setAttribute('class', 'back1');
   var h2El = document.createElement('h2'); // Create the h2 element
   h2El.textContent = 'This could be you! Hover for more'; // Set its contents to the userName
   divElFront.appendChild(h2El); // appened the h2 to the div

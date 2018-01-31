@@ -6,6 +6,7 @@ eggplant #874D63 */
 body {
   height: 100%;
   background-color: #A8D2CB;
+  color:black;
 
 }
 
@@ -14,8 +15,11 @@ main {
   margin: auto;
 }
 
+div{
+  display: inline-block;
+}
 /* entire container, keeps perspective */
- .flipContainer li{
+ .flipContainer {
   width: 300px;
   height: 350px;
   perspective: 1000;
@@ -55,7 +59,7 @@ main div:nth-child(3n) {
   font-size: 120%;
 }
 
-div.flipper.back {
+.back {
   background-color: #FAF9EE;
   transform: rotateY(180deg);
   backface-visibility: hidden;
