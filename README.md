@@ -33,10 +33,18 @@ This is a way for Code Fellow students to find others who have shared interest i
 
 - https://davidwalsh.name/css-flip
 - http://css3.bradshawenterprises.com/flip/
+
 - Source for template to create User-Scenarios: UserZoom website
 https://www.userzoom.com/user-experience-research/a-simple-template-for-writing-usability-tasks/
 - Source for multichoice option as an input from MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
 
+https://stackoverflow.com/questions/23780092/floating-li-with-different-heights  -- used to align the heights of About Us cards.
+
+https://stackoverflow.com/questions/18789206/floating-html-list-items-with-different-height -- used to align image height in each card.
+
+https://stackoverflow.com/questions/5025941/is-there-a-way-to-get-a-button-element-to-link-to-a-location-without-wrapping -- used to figure out how to get the github link to work within button anchor tag.
+
+https://www.w3schools.com/howto/howto_css_cards.asp -- used to help design the About Us cards.
 
 ## *Questions or suggestions?* 
 

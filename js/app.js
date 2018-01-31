@@ -6,6 +6,39 @@ var userName;
 //get element information
 var inputElUserName = document.getElementById('userName');
 var formElLoginForm = document.getElementById('loginForm');
+var mainEl = document.getElementById('content');
+
+function buildLiEl (promptValue, displayValue) {
+  var liEl = document.createElement('li');
+  liEl.textContent = promptValue + displayValue;
+  return liEl;
+}
+
+function createCard () {
+  var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
+  divElFlipContainer.setAttribute('id', 'exampleCard'); // Set the div ID to the
+  divElFlipContainer.setAttribute('class', 'flipContainer');
+  var divElFlipper = document.createElement('div');
+  divElFlipper.setAttribute('class', 'flipper');
+  var divElFront = document.createElement('div');
+  divElFront.setAttribute('class', 'front');
+  var divElBack = document.createElement('div');
+  divElBack.setAttribute('class', 'back');
+  var h2El = document.createElement('h2'); // Create the h2 element
+  h2El.textContent = 'This could be you'; // Set its contents to the userName
+  divElFront.appendChild(h2El); // appened the h2 to the div
+  divElFlipper.appendChild(divElFront);
+  // add interests
+  var ulEl = document.createElement('ul'); // Create the ul to house the interests
+  ulEl.appendChild(buildLiEl('Hobby: ', 'Your info here'));
+  ulEl.appendChild(buildLiEl('Color: ', 'Your info here'));
+  ulEl.appendChild(buildLiEl('Code Known : ', 'Your info here'));
+  ulEl.appendChild(buildLiEl('Code Interest : ', 'Your info here'));
+  divElBack.appendChild(ulEl);
+  divElFlipper.appendChild(divElBack);
+  divElFlipContainer.appendChild(divElFlipper);
+  return divElFlipContainer;
+}
 
 //if no local, create it. else, use it
 function checkLocalStorage() {
@@ -47,5 +80,10 @@ function handleLogin (e) {
 //call login function on submit
 formElLoginForm.addEventListener('submit', handleLogin);
 
+function updateDisplay () {
+  mainEl.appendChild(createCard());
+}
+
 //call local check
 checkLocalStorage();
+updateDisplay();
