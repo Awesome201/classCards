@@ -37,7 +37,8 @@ eggplant #874D63 */
   text-align: left;
   font-family: 'Permanent Marker', cursive;
   list-style-type: none; 
-  line-height: 25px;       
+  line-height: 25px;
+  text-indent: 10px;       
 }
 
 .back {
