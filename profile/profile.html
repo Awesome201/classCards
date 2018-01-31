@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Profile</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Permanent+Marker|Raleway|Shadows+Into+Light" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="css/profile.css" />
@@ -24,7 +25,7 @@
       <legend>Thank you for filling out the below questions</legend>
 
       <label for="userName">Enter your first name</label>
-      <input name="userName" type="text">
+      <input id="userName" name="userName" type="text">
 
       <label class="avatar-display" for="userAvatar">Choose your avatar from the options below</label>
 
@@ -59,8 +60,7 @@
         <li><input type="checkbox" name="language" value="Python"> Python<br></li>
         <li><input type="checkbox" name="language" value="C#"> C#<br></li>
         <li><input type="checkbox" name="language" value="C++"> C++<br></li>
-        <li><input type="checkbox" name="language" value="iOS"> iOS<br></li>
-        <li><input type="checkbox" name="language" value="Android"> Android<br></li>
+        <li><input type="checkbox" name="language" value="Swift"> Swift<br></li>
       </ul>
      
       <label for="interestedLanguage">What coding languages are you interested in learning?</label>
@@ -72,12 +72,10 @@
         <li><input type="checkbox" name="learnLanguage" value="Python"> Python<br></li>
         <li><input type="checkbox" name="learnLanguage" value="C#"> C#<br></li>
         <li><input type="checkbox" name="learnLanguage" value="C++"> C++<br></li>
-        <li><input type="checkbox" name="learnLanguage" value="iOS"> iOS<br></li>
-        <li><input type="checkbox" name="learnLanguage" value="Android"> Android<br></li>
+        <li><input type="checkbox" name="learnLanguage" value="Swift"> Swift<br></li>
       </ul>
 
       <button id="addUser" type="submit">Submit</button>
-      <!-- <button id="addUser"><a href="../results/results.html">Submit</a></button> -->
     </fieldset>
   </form>
   <button id="reset" type="click" alt="Delete Profile">Delete Profile</button>

@@ -69,55 +69,67 @@ function createOnlyOurAboutUsCards() {
 // tell the Html to get each property value from the Profile object constructor in the appropriate element
 // attach the element in the appropriate location in the Html.
 Profile.prototype.render = function () {
-  var divMain = document.createElement('div');
+  var divMain = document.createElement('div'); // Flip container
   divMain.className = 'card';
   divMain.style.backgroundColor = this.userColor;
   cardElement.appendChild(divMain);
   
-  var profileImage = document.createElement('img');
-  profileImage.src = this.userAvatar;
-  profileImage.className = 'holdsImgs';
-  divMain.appendChild(profileImage);
-  
-  var divHoldTheCards = document.createElement('div');
+  var divHoldTheCards = document.createElement('div'); 
   divHoldTheCards.className = 'container';
   divMain.appendChild(divHoldTheCards);
   
+  var divElFlipper = document.createElement('div');
+  divElFlipper.className = 'flipper';
+  divMain.appendChild(divElFlipper);
+
+  var divElFront = document.createElement('div');
+  divElFront.className = 'front';
+  divElFlipper.appendChild(divElFront);
+
+  var divElBack = document.createElement('div');
+  divElBack.className = 'back';
+  divElFlipper.appendChild(divElBack);
+  
+  var profileImage = document.createElement('img');
+  profileImage.src = this.userAvatar;
+  profileImage.className = 'holdsImgs';
+  divElFront.appendChild(profileImage);
+
   var userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
   userNameElement.className = 'userNames';
-  divHoldTheCards.appendChild(userNameElement);
+  divElFront.appendChild(userNameElement);
+
+  // var ulEl = document.createElement('ul');
+  // divHoldTheCards.appendChild(ulEl);
   
-  var ulEl = document.createElement('ul');
-  divHoldTheCards.appendChild(ulEl);
-
-  var hobbyElement = document.createElement('li');
-  hobbyElement.textContent = 'Current Hobby: ' + this.userHobby;
-  ulEl.appendChild(hobbyElement);
-
-  var knownLanguageElement = document.createElement('li');
-  knownLanguageElement.textContent = 'Languages Known: ' + this.knownLanguage;
-  ulEl.appendChild(knownLanguageElement);
-
-  var interestedLanguageElement = document.createElement('li');
-  interestedLanguageElement.textContent = 'Language Interests: ' + this.interestedLanguage;
-  ulEl.appendChild(interestedLanguageElement);
-
+  
   var anchorForGitHubLink = document.createElement('a');
   anchorForGitHubLink.target = '_blank';
   anchorForGitHubLink.href = this.gitHubLink;
-  divHoldTheCards.appendChild(anchorForGitHubLink);
+  divElBack.appendChild(anchorForGitHubLink);
+
+  var hobbyElement = document.createElement('li');
+  hobbyElement.textContent = 'Current Hobby: ' + this.userHobby;
+  divElBack.appendChild(hobbyElement);
+
+  var knownLanguageElement = document.createElement('li');
+  knownLanguageElement.textContent = 'Languages Known: ' + this.knownLanguage;
+  divElBack.appendChild(knownLanguageElement);
+
+  var interestedLanguageElement = document.createElement('li');
+  interestedLanguageElement.textContent = 'Language Interests: ' + this.interestedLanguage;
+  divElBack.appendChild(interestedLanguageElement);
 
   var buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
   buttonElement.textContent = 'GitHub: ' + this.userName;
   anchorForGitHubLink.appendChild(buttonElement);
 
-  var divElFLipContainer = document.createElement('div');
-  divElFLipContainer.className = 'flip-Container';
-  divMain.appendChild(divElFLipContainer);
-
-
+  // enabling this causes all but 1 card to disappear.
+  // var divElBack = document.createElement('div')
+  // diveElBack.className = 'back';
+  // divElFlipper.appendChild(divElBack);
 
   var aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
