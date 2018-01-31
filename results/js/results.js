@@ -108,6 +108,7 @@ function createCard (profileObj) {
   var imgEl = document.createElement('img'); // Create the img element for the avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
+  divElFront.style.backgroundColor = profileObj.userColor;
   divElFront.appendChild(imgEl);
   divElFlipper.appendChild(divElFront);
   // add interests
