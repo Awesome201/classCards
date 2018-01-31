@@ -23,7 +23,7 @@ function checkLocalStorage() {
 
     navliElement.id = 'nav-link';
     navaElement.textContent = 'Edit Your Profile';
-    navaElement.href = 'profile/profile.html';
+    navaElement.href = '../profile/profile.html';
     navliElement.appendChild(navaElement);
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
@@ -32,7 +32,7 @@ function checkLocalStorage() {
     navaElement = document.createElement('a');
     navliElement.id = 'nav-link';
     navaElement.textContent = 'See Your Class Cards';
-    navaElement.href = 'results/results.html';
+    navaElement.href = '../results/results.html';
     navliElement.appendChild(navaElement);
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
@@ -73,21 +73,21 @@ Profile.prototype.render = function () {
   divMain.className = 'card';
   divMain.style.backgroundColor = this.userColor;
   cardElement.appendChild(divMain);
-
+  
   var profileImage = document.createElement('img');
   profileImage.src = this.userAvatar;
   profileImage.className = 'holdsImgs';
   divMain.appendChild(profileImage);
-
+  
   var divHoldTheCards = document.createElement('div');
   divHoldTheCards.className = 'container';
   divMain.appendChild(divHoldTheCards);
-
+  
   var userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
   userNameElement.className = 'userNames';
   divHoldTheCards.appendChild(userNameElement);
-
+  
   var ulEl = document.createElement('ul');
   divHoldTheCards.appendChild(ulEl);
 
@@ -113,6 +113,12 @@ Profile.prototype.render = function () {
   buttonElement.textContent = 'GitHub: ' + this.userName;
   anchorForGitHubLink.appendChild(buttonElement);
 
+  var divElFLipContainer = document.createElement('div');
+  divElFLipContainer.className = 'flip-Container';
+  divMain.appendChild(divElFLipContainer);
+
+
+
   var aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
   divHoldTheCards.appendChild(aboutUsDescriptionEl);
@@ -126,4 +132,4 @@ new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaSc
 new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript', 'https://github.com/knyghtLyght');
 
 createOnlyOurAboutUsCards();
-
+checkLocalStorage();

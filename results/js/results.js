@@ -14,6 +14,10 @@ var missMatchArray = [];
 var newUserProfiles;
 Profile.allProfiles = [];
 
+// Test variables
+var knownArray = ['JavaScript', 'HTML', 'CSS'];
+var interestArray = ['Python', 'C#'];
+
 // Profile obj constructor
 function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interestedLanguage) {
   this.userName = userName;
@@ -25,31 +29,32 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
   Profile.allProfiles.push(this);
 }
 
-// local storage test array
-function localStorageTestArray () {
-  new Profile('test', '../img/fighter.png', 'martial arts', 'green', 'java', 'javascript');
-  localStorage.profiles = JSON.stringify(Profile.allProfiles);
-}
-
 // Local storage check
 function localStorageHandler () {
-  newUserProfiles = JSON.parse(localStorage.profiles);
+  newUserProfiles = JSON.parse(localStorage.newUserName);
 }
 
 // create test instance of objects
 function builtInProfiles () {
-  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', 'green', 'cSharp', 'javascript');
-  new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', 'cSharp', 'javascript');
-  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
-  new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', 'java', 'javascript');
-  new Profile('Zach', '../img/cleric.jpg', 'martial arts', 'green', 'java', 'javascript');
-  new Profile('Zach', '../img/fighter.png', 'martial arts', 'green', 'java', 'javascript');
-  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
+  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Zach', '../img/cleric.jpg', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Zach', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
 }
 
 // Li builder
 function buildLiEl (promptValue, displayValue) {
   var liEl = document.createElement('li');
+  if (displayValue instanceof Array) {
+    var newString = '';
+    for(var i in displayValue) {
+      newString = newString + ' ' + displayValue[i];
+    }
+    displayValue = newString;
+  }
   liEl.textContent = promptValue + displayValue;
   return liEl;
 }
@@ -58,17 +63,18 @@ function buildLiEl (promptValue, displayValue) {
 function matchFinder (object, compareArray) {
   var matchNumber = 0;
   for (var i in compareArray) {
-    if (object.userColor === compareArray[i].userColor) {
-      matchNumber++;
-    }
     if (object.userHobby === compareArray[i].userHobby) {
       matchNumber++;
     }
-    if (object.knownLanguage === compareArray[i].knownLanguage) {
-      matchNumber++;
+    for (var j in object.knownLanguage) {
+      if (compareArray[i].knownLanguage.includes(object.knownLanguage[j])) {
+        matchNumber++;
+      }
     }
-    if (object.interestedLanguage === compareArray[i].interestedLanguage) {
-      matchNumber++;
+    for (var k in object.interestedLanguage) {
+      if (compareArray[i].interestedLanguage.includes(object.interestedLanguage[k])) {
+        matchNumber++;
+      }
     }
     console.log(matchNumber);
     // Object literal to hold the index of the object in allProfiles and the number of matches
@@ -84,7 +90,6 @@ function matchFinder (object, compareArray) {
     matchNumber = 0;
   }
 }
-
 
 // Create and appened card
 function createCard (profileObj) {
@@ -119,13 +124,13 @@ function createCard (profileObj) {
 
 //Display the matching cards
 function updateDisplay (matchArray) {
+  createCard(newUserProfiles);
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
 }
 
-localStorageTestArray();
 localStorageHandler();
 builtInProfiles();
-matchFinder(newUserProfiles[0], Profile.allProfiles);
+matchFinder(newUserProfiles, Profile.allProfiles);
 updateDisplay(matchArray);

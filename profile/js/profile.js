@@ -1,9 +1,9 @@
 'use strict';
 
-// if (localStorage.getItem('userName') === null) {
-//   alert('Not logged in, redirecting to home page.');
-//   window.location = '../index.html';
-// }
+if (localStorage.getItem('userName') === null) {
+  alert('Not logged in, redirecting to home page.');
+  window.location = '../index.html';
+}
 
 Profile.allProfiles = [];
 
@@ -20,6 +20,7 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage,intereste
 new Profile('Ramon','../img/monk.png','Cars','Red','JS,CSS,HTML','Python');
 
 var userForm = document.getElementById('newUserForm');
+var deleteUser = document.getElementById('reset');
 
 function addNewUser(event) {
   event.preventDefault();
@@ -45,4 +46,14 @@ function addNewUser(event) {
   }
 }
 
+function resetStorage() {
+  if (confirm('Are you sure you wish to delete your profile? This will kick you back to the signup page.')) {
+    localStorage.clear();
+    window.location = '../index.html';
+  } else {
+    return;
+  }
+}
+
 userForm.addEventListener('submit',addNewUser);
+deleteUser.addEventListener('click',resetStorage);
