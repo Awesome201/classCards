@@ -90,7 +90,6 @@ function matchFinder (object, compareArray) {
   }
 }
 
-
 // Create and appened card
 function createCard (profileObj) {
   var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
