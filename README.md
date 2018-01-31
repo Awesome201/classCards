@@ -22,10 +22,8 @@ A few reasons:
 * GitHub
 * Jon Duckett HTML & CSS book
 * Jon Duckett JavaScript & jQuery book
-* Source for template to create User-Scenarios: UserZoom website
-https://www.userzoom.com/user-experience-research/a-simple-template-for-writing-usability-tasks/
-* Source for multichoice option as an input from MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
-* Help from my instructor, classmates and TAs
+* Logo from LogoJoy (https://logojoy.com/)
+* Help from our instructor, classmates and TAs
 
 ## Use:
 
@@ -35,11 +33,12 @@ This is a way for Code Fellow students to find others who have shared interest i
 
 - https://davidwalsh.name/css-flip
 - http://css3.bradshawenterprises.com/flip/
+- Source for template to create User-Scenarios: UserZoom website
+https://www.userzoom.com/user-experience-research/a-simple-template-for-writing-usability-tasks/
+- Source for multichoice option as an input from MDN: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option
 
-## Other information:
 
-
-*Questions or suggestions?* 
+## *Questions or suggestions?* 
 
 Please contact us at Awesome 201 on GitHub
 (https://github.com/Awesome201) .

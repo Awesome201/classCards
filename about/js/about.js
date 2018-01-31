@@ -1,5 +1,33 @@
 'use strict';
 
+function checkLocalStorage() {
+  if (localStorage.getItem('userName') === null) {
+    return;
+  } else {
+    userName = JSON.parse(localStorage.userName);
+
+    var navElementLink = document.getElementById('nav-link1');
+    var navOlElement = document.getElementById('conditional-nav');
+    var navliElement = document.createElement('li');
+    var navaElement = document.createElement('a');
+
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'Edit Your Profile';
+    navaElement.href = 'profile/profile.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
+
+    navliElement = document.createElement('li');
+    navaElement = document.createElement('a');
+    navliElement.id = 'nav-link';
+    navaElement.textContent = 'See Your Class Cards';
+    navaElement.href = 'results/results.html';
+    navliElement.appendChild(navaElement);
+    navOlElement.appendChild(navliElement);
+    navliElement.after(navElementLink);
+  }
+
 // retrieve the 'card' class from the DOM.
 var cardElement = document.getElementById('all-cards');
 
@@ -87,7 +115,6 @@ Profile.prototype.render = function() {
   new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
   new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
   new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
-  
-  createOnlyOurAboutUsCards();
 
- 
+  checkLocalStorage();
+  createOnlyOurAboutUsCards();
