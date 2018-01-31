@@ -75,7 +75,6 @@ Profile.prototype.render = function () {
   
   var divHoldTheCards = document.createElement('div'); 
   divHoldTheCards.className = 'container';
-  // divHoldTheCards.style.backgroundColor = this.userColor;
   divMain.appendChild(divHoldTheCards);
   
   var divElFlipper = document.createElement('div');
@@ -84,7 +83,7 @@ Profile.prototype.render = function () {
   divHoldTheCards.appendChild(divElFlipper);
 
   var divElFront = document.createElement('div');
-  divElFront.className = 'front';
+  divElFront.className = 'front';   
   divElFlipper.appendChild(divElFront);
 
   var divElBack = document.createElement('div');
@@ -116,11 +115,11 @@ Profile.prototype.render = function () {
   divElFront.appendChild(hobbyElement);
 
   var knownLanguageElement = document.createElement('li');
-  knownLanguageElement.textContent = 'Languages Known: ' + this.knownLanguage;
+  knownLanguageElement.textContent = 'Coding Languages Known: ' + this.knownLanguage;
   divElFront.appendChild(knownLanguageElement);
 
   var interestedLanguageElement = document.createElement('li');
-  interestedLanguageElement.textContent = 'Language Interests: ' + this.interestedLanguage;
+  interestedLanguageElement.textContent = 'Coding Language Interests: ' + this.interestedLanguage;
   divElFront.appendChild(interestedLanguageElement);
 
   var buttonElement = document.createElement('button');
