@@ -96,7 +96,7 @@ function createCard (profileObj) {
   var h2El = document.createElement('h2'); // Create the h2 element
   h2El.textContent = profileObj.userName; // Set its contents to the userName
   divElFront.appendChild(h2El); // appened the h2 to the div
-  var imgEl = document.createElement('img'); // Create the img elemnt fot he avatar
+  var imgEl = document.createElement('img'); // Create the img element for the avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
   divElFront.appendChild(imgEl);

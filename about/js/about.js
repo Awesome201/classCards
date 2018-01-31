@@ -24,7 +24,7 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
 
 // this function will call ALL cards that have been created and are stored in our Profile.allProfiles array.
 function createAllCards() {
-  for(var i in Profile.allProfiles) {
+  for (var i in Profile.allProfiles) {
     Profile.allProfiles[i].render();
   }
 }
@@ -39,7 +39,7 @@ function createOnlyOurAboutUsCards() {
 // create Html elements 
 // tell the Html to get each property value from the Profile object constructor in the appropriate element
 // attach the element in the appropriate location in the Html.
-Profile.prototype.render = function() {
+Profile.prototype.render = function () {
   var divMain = document.createElement('div');
   divMain.className = 'card';
   divMain.style.backgroundColor = this.userColor;
@@ -90,16 +90,15 @@ Profile.prototype.render = function() {
   divHoldTheCards.appendChild(aboutUsDescriptionEl);
 }
 
-  // new instances of the Profile object constructor
+// new instances of the Profile object constructor
 new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript', 'https://github.com/buphnezz');
 new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#338FCC', 'CSS', 'JavaScript', 'https://github.com/FavoredFortune');
 new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python', 'https://github.com/austincmatteson');
 new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python', 'https://github.com/brickfaced');
 new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript', 'https://github.com/knyghtLyght');
-  
-  createOnlyOurAboutUsCards();
+
+createOnlyOurAboutUsCards();
 
 
 
 
- 
