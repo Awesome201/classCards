@@ -80,7 +80,7 @@ Profile.prototype.render = function() {
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
   divHoldTheCards.appendChild(aboutUsDescriptionEl);
 }
-  
+
   // new instances of the Profile object constructor
   new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
   new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaScript');
@@ -89,5 +89,8 @@ Profile.prototype.render = function() {
   new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript');
   
   createOnlyOurAboutUsCards();
+
+
+
 
  

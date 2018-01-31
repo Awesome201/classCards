@@ -1,17 +1,19 @@
 body {
-  display: block;
+  display: inline;
   margin: 8px;
 }
-
-.card {
+  
+.card { 
+  display: table-cell;
   box-shadow: 0 4px 24px 0 #03950f49;
-  max-width: 300px;
+  max-width: 215px;
   margin: auto;
   text-align: center;
+  
 }
 
 .title {
-    color: hsl(0, 0%, 5%);
+    color: #0c0c0c;
     font-size: 18px;
 }
 
@@ -42,33 +44,3 @@ button:hover, a:hover {
     opacity: 0.7;
 }
 
-section {
-  width:500px;
-  clear:both;
-}
-
-#first-card {
-  float: left;
-  margin: 0px 0px 15px 15px;
-}
-
-#second-card {
-float: left;
-margin: 0px 0px 15px 15px;
-}
-
-#third-card {
-float: left;
-margin: 0px 0px 15px 15px;
-  
-}
-
-#fourth-card {
-float: left;
-margin: 0px 0px 15px 15px;
-}
-
-#fifth-card {
-float: left;
-margin: 0px 0px 15px 15px;
-} 
