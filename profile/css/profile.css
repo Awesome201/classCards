@@ -9,8 +9,8 @@ legend {
   font-size: 40px;
 }
 
-img {
-  margin-bottom: 0px;
+#nav-link{
+ margin:20px;
 }
 
 p{
@@ -22,6 +22,7 @@ p{
 #avatar li{
   text-align: center;
   display: inline-block;
+  margin-bottom: 0px;
 }
 
 label {

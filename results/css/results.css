@@ -49,16 +49,19 @@ main div:nth-child(3n) {
   height: 100%;
   backface-visibility: hidden;
   text-align: center;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .front h2 {
   font-size: 120%;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .back {
   background-color: #FAF9EE;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+  font-family: 'Shadows Into Light', cursive;
 }
 
 .back li {
