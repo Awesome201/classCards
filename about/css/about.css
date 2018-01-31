@@ -3,11 +3,22 @@ body {
   margin: 8px;
 }
   
+
 .card { 
   display: table-cell;
   box-shadow: 0 4px 24px 0 #03950f49;
   max-width: 215px;
   margin: auto;
+  text-align: center;
+  line-height: 150%;
+}
+
+.container {
+  text-align: left;
+  text-indent: 10px;
+}
+
+.userNames {
   text-align: center;
 }
 
@@ -33,7 +44,7 @@ button {
     padding: 8px;
     text-align: center;
     cursor: pointer;
-    width: 87%;
+    width: 81%;
     font-size: 18px;
     margin-bottom: 20px;
 }

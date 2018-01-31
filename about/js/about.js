@@ -51,6 +51,7 @@ Profile.prototype.render = function() {
 
   var userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
+  userNameElement.className = 'userNames';
   divHoldTheCards.appendChild(userNameElement);
 
   var ulEl = document.createElement('ul');
