@@ -80,7 +80,7 @@ Profile.prototype.render = function () {
   
   var divElFlipper = document.createElement('div');
   divElFlipper.className = 'flipper';
-  divMain.appendChild(divElFlipper);
+  divHoldTheCards.appendChild(divElFlipper);
 
   var divElFront = document.createElement('div');
   divElFront.className = 'front';
@@ -111,29 +111,24 @@ Profile.prototype.render = function () {
 
   var hobbyElement = document.createElement('li');
   hobbyElement.textContent = 'Current Hobby: ' + this.userHobby;
-  divElBack.appendChild(hobbyElement);
+  divElFront.appendChild(hobbyElement);
 
   var knownLanguageElement = document.createElement('li');
   knownLanguageElement.textContent = 'Languages Known: ' + this.knownLanguage;
-  divElBack.appendChild(knownLanguageElement);
+  divElFront.appendChild(knownLanguageElement);
 
   var interestedLanguageElement = document.createElement('li');
   interestedLanguageElement.textContent = 'Language Interests: ' + this.interestedLanguage;
-  divElBack.appendChild(interestedLanguageElement);
+  divElFront.appendChild(interestedLanguageElement);
 
   var buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
   buttonElement.textContent = 'GitHub: ' + this.userName;
   anchorForGitHubLink.appendChild(buttonElement);
 
-  // enabling this causes all but 1 card to disappear.
-  // var divElBack = document.createElement('div')
-  // diveElBack.className = 'back';
-  // divElFlipper.appendChild(divElBack);
-
   var aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
-  divHoldTheCards.appendChild(aboutUsDescriptionEl);
+  divElBack.appendChild(aboutUsDescriptionEl);
 }
 
 // new instances of the Profile object constructor
