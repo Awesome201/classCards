@@ -23,7 +23,7 @@ function checkLocalStorage() {
 
     navliElement.id = 'nav-link';
     navaElement.textContent = 'Edit Your Profile';
-    navaElement.href = 'profile/profile.html';
+    navaElement.href = '../profile/profile.html';
     navliElement.appendChild(navaElement);
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
@@ -32,7 +32,7 @@ function checkLocalStorage() {
     navaElement = document.createElement('a');
     navliElement.id = 'nav-link';
     navaElement.textContent = 'See Your Class Cards';
-    navaElement.href = 'results/results.html';
+    navaElement.href = '../results/results.html';
     navliElement.appendChild(navaElement);
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
@@ -126,4 +126,4 @@ new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaSc
 new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript', 'https://github.com/knyghtLyght');
 
 createOnlyOurAboutUsCards();
-
+checkLocalStorage();
