@@ -36,7 +36,7 @@ function localStorageHandler () {
 
 // create test instance of objects
 function builtInProfiles () {
-  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', '#BADA55', knownArray, interestArray);
   new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', knownArray, interestArray);
@@ -108,6 +108,7 @@ function createCard (profileObj) {
   var imgEl = document.createElement('img'); // Create the img element for the avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
+  divElFront.style.backgroundColor = profileObj.userColor;
   divElFront.appendChild(imgEl);
   divElFlipper.appendChild(divElFront);
   // add interests

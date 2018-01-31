@@ -49,15 +49,16 @@ main div:nth-child(3n) {
   position: absolute;
   width: 300px;
   height: 100%;
-  background-color: #FAF9EE;
   backface-visibility: hidden;
   text-align: center;
   font-family: 'Permanent Marker', cursive;
+  text-shadow: 0px 0px 30px black;
 }
 
 .front h2 {
   font-size: 120%;
   font-family: 'Permanent Marker', cursive;
+  color: white;
 }
 
 .back {
