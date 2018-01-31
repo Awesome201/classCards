@@ -7,7 +7,6 @@ body {
   height: 100%;
   background-color: #A8D2CB;
   color:black;
-
 }
 
 main {
@@ -37,7 +36,6 @@ main div:nth-child(3n) {
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.6s linear;
-  background-color: #FAF9EE;
   border: 5px ridge white;
 }
 
@@ -51,6 +49,7 @@ main div:nth-child(3n) {
   position: absolute;
   width: 300px;
   height: 100%;
+  background-color: #FAF9EE;
   backface-visibility: hidden;
   text-align: center;
 }
@@ -61,6 +60,8 @@ main div:nth-child(3n) {
 
 .back {
   background-color: #FAF9EE;
+  height: 100%;
+  width: 100%;
   transform: rotateY(180deg);
   backface-visibility: hidden;
   color: black;
