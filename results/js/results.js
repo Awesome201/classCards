@@ -48,6 +48,13 @@ function builtInProfiles () {
 // Li builder
 function buildLiEl (promptValue, displayValue) {
   var liEl = document.createElement('li');
+  if (displayValue instanceof Array) {
+    var newString = '';
+    for(var i in displayValue) {
+      newString = newString + ' ' + displayValue[i];
+    }
+    displayValue = newString;
+  }
   liEl.textContent = promptValue + displayValue;
   return liEl;
 }
