@@ -29,15 +29,9 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
   Profile.allProfiles.push(this);
 }
 
-// local storage test array
-function localStorageTestArray () {
-  new Profile('test', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
-  localStorage.profiles = JSON.stringify(Profile.allProfiles);
-}
-
 // Local storage check
 function localStorageHandler () {
-  newUserProfiles = JSON.parse(localStorage.profiles);
+  newUserProfiles = JSON.parse(localStorage.newUserName);
 }
 
 // create test instance of objects
@@ -123,13 +117,13 @@ function createCard (profileObj) {
 
 //Display the matching cards
 function updateDisplay (matchArray) {
+  createCard(newUserProfiles);
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
 }
 
-localStorageTestArray();
 localStorageHandler();
 builtInProfiles();
-matchFinder(newUserProfiles[0], Profile.allProfiles);
+matchFinder(newUserProfiles, Profile.allProfiles);
 updateDisplay(matchArray);
