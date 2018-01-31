@@ -41,6 +41,10 @@ function builtInProfiles () {
   new Profile('Kevin', '../img/rogue.jpg', 'martial arts', 'green', 'cSharp', 'javascript');
   new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', 'cSharp', 'javascript');
   new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
+  new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', 'java', 'javascript');
+  new Profile('Zach', '../img/cleric.jpg', 'martial arts', 'green', 'java', 'javascript');
+  new Profile('Zach', '../img/fighter.png', 'martial arts', 'green', 'java', 'javascript');
+  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', 'java', 'javascript');
 }
 
 // Li builder
