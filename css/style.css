@@ -130,12 +130,14 @@ p{
   transition: all 0.6s linear;
   background-color: #FAF9EE;
   border: 5px ridge white;
+  color:#874d63;
 }
 
 /* flip the pane when hovered */
 .flipContainer:hover .flipper {
   transform: rotateY(180deg);
   box-shadow: -5px 5px 5px #aaa;
+  color:#874d63;
 }
 
 .front {
@@ -144,6 +146,7 @@ p{
   height: 100%;
   backface-visibility: hidden;
   text-align: center;
+  color:#874d63;
 }
 
 .front h2 {
@@ -154,6 +157,7 @@ p{
   background-color: #FAF9EE;
   transform: rotateY(180deg);
   backface-visibility: hidden;
+  color:#874d63;
 }
 
 .back li {
