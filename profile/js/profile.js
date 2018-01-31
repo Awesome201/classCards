@@ -5,6 +5,10 @@ if (localStorage.getItem('userName') === null) {
   window.location = '../index.html';
 }
 
+if (localStorage.getItem('newUserName')) {
+  editUser();
+}
+
 Profile.allProfiles = [];
 
 function Profile(userName,userAvatar,userHobby,userColor,knownLanguage,interestedLanguage) {
@@ -25,7 +29,7 @@ var deleteUser = document.getElementById('reset');
 function addNewUser(event) {
   event.preventDefault();
   var newUserName = event.target.userName.value;
-  var newUserAvatar = event.target.userAvatar.src;
+  var newUserAvatar = event.target.userAvatar.value;
   var newUserHobby = event.target.userHobby.value;
   var newUserColor = event.target.userColor.value;
   var newKnownLanguage = [];
@@ -49,13 +53,10 @@ function addNewUser(event) {
 
 function editUser () {
   var placeHolderInfo = JSON.parse(localStorage.getItem('newUserName'));
-  var questionOne = document.getElementById('userName');
-  var questionTwo = document.getElementById('');
-  var questionThree = document.getElementById('');
-  var questionFour = document.getElementById('');
-  var questionFive = document.getElementById('');
-  var questionSix = document.getElementById('');
-  return placeHolderInfo;
+  var questionOne = document.getElementById('userName').value = placeHolderInfo.userName;
+  var questionTwo = document.getElementById('userAvatar').value = placeHolderInfo.userAvatar;
+  var questionThree = document.getElementById('userColor').value = placeHolderInfo.userColor;
+  var questionFour = document.getElementById('userHobby').value = placeHolderInfo.userHobby;
 }
 
 function resetStorage() {
@@ -67,6 +68,5 @@ function resetStorage() {
   }
 }
 
-editUser();
 userForm.addEventListener('submit',addNewUser);
 deleteUser.addEventListener('click',resetStorage);
