@@ -46,6 +46,8 @@ https://stackoverflow.com/questions/5025941/is-there-a-way-to-get-a-button-eleme
 
 https://www.w3schools.com/howto/howto_css_cards.asp -- used to help design the About Us cards.
 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset -- Fieldsets have specific css they accept and deny when rendering.
+
 ## *Questions or suggestions?* 
 
 Please contact us at Awesome 201 on GitHub
