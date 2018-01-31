@@ -1,5 +1,9 @@
 'use strict';
 
+// add the field to each bit of info ex: it should read Favorite Color:   and Language Known:
+// STRETCH GOAL add actual link to github when they click the github button.  have the button display  'GitHub: Zachary' add an href that will link it to the actual git hub account.
+
+
 // retrieve the 'card' class from the DOM.
 var cardElement = document.getElementById('all-cards');
 
@@ -8,11 +12,12 @@ var cardElement = document.getElementById('all-cards');
 Profile.allProfiles = [];
 
 // this holds all the properties for each Profile that will be generated. 
-function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage) {
+function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, gitHubLink) {
   this.userName = userName;
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
   this.userColor = userColor;
+  this.gitHubLink = gitHubLink;
   this.knownLanguage = knownLanguage;
   this.interestedLanguage = interestedLanguage;
   Profile.allProfiles.push(this);
@@ -75,7 +80,7 @@ Profile.prototype.render = function() {
 
   var buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
-  buttonElement.textContent = 'Contact Me';
+  buttonElement.textContent = 'GitHub: ' + this.gitHubLink;
   divHoldTheCards.appendChild(buttonElement);
 
   var aboutUsDescriptionEl = document.createElement('p');
@@ -84,7 +89,7 @@ Profile.prototype.render = function() {
 }
 
   // new instances of the Profile object constructor
-  new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript');
+new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript', 'https://github.com/buphnezz');
   new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#666012', 'CSS', 'JavaScript');
   new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python');
   new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python');
