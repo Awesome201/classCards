@@ -71,15 +71,16 @@ function createOnlyOurAboutUsCards() {
 Profile.prototype.render = function () {
   var divMain = document.createElement('div'); // Flip container
   divMain.className = 'card';
-  divMain.style.backgroundColor = this.userColor;
   cardElement.appendChild(divMain);
   
   var divHoldTheCards = document.createElement('div'); 
   divHoldTheCards.className = 'container';
+  // divHoldTheCards.style.backgroundColor = this.userColor;
   divMain.appendChild(divHoldTheCards);
   
   var divElFlipper = document.createElement('div');
   divElFlipper.className = 'flipper';
+  divElFlipper.style.backgroundColor = this.userColor;
   divHoldTheCards.appendChild(divElFlipper);
 
   var divElFront = document.createElement('div');
