@@ -42,6 +42,7 @@ Profile.prototype.render = function() {
 
   var profileImage = document.createElement('img');
   profileImage.src = this.userAvatar;
+  profileImage.className = 'holdsImgs';
   divMain.appendChild(profileImage);
 
   var divHoldTheCards = document.createElement('div');
