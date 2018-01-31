@@ -1,8 +1,6 @@
 'use strict';
 
 // add the field to each bit of info ex: it should read Favorite Color:   and Language Known:
-// STRETCH GOAL add actual link to github when they click the github button.  have the button display  'GitHub: Zachary' add an href that will link it to the actual git hub account.
-
 
 // retrieve the 'card' class from the DOM.
 var cardElement = document.getElementById('all-cards');
@@ -43,6 +41,7 @@ function createOnlyOurAboutUsCards() {
 Profile.prototype.render = function() {
   var divMain = document.createElement('div');
   divMain.className = 'card';
+  divMain.style.backgroundColor = this.userColor;
   cardElement.appendChild(divMain);
 
   var profileImage = document.createElement('img');
@@ -66,10 +65,6 @@ Profile.prototype.render = function() {
   hobbyElement.textContent = this.userHobby;
   ulEl.appendChild(hobbyElement);
 
-  var userColorElement = document.createElement('li');
-  userColorElement.textContent = this.userColor;
-  ulEl.appendChild(userColorElement);
-
   var knownLanguageElement = document.createElement('li');
   knownLanguageElement.textContent = this.knownLanguage;
   ulEl.appendChild(knownLanguageElement);
@@ -78,10 +73,16 @@ Profile.prototype.render = function() {
   interestedLanguageElement.textContent = this.interestedLanguage;
   ulEl.appendChild(interestedLanguageElement);
 
+  var anchorForGitHubLink = document.createElement('a');
+  anchorForGitHubLink.target = '_blank';
+  anchorForGitHubLink.href = this.gitHubLink;
+  divHoldTheCards.appendChild(anchorForGitHubLink);
+
   var buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
-  buttonElement.textContent = 'GitHub: ' + this.gitHubLink;
-  divHoldTheCards.appendChild(buttonElement);
+  buttonElement.textContent = 'GitHub: ' + this.userName;
+  anchorForGitHubLink.appendChild(buttonElement);
+
 
   var aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
