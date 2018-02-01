@@ -38,11 +38,11 @@ function localStorageHandler () {
 
 // create test instance of objects
 function builtInProfiles () {
-  new Profile('Kevin', '../img/rogue.png', 'martial arts', '#BADA55', knownArray, interestArray);
-  new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Sooz', '../img/wizzard.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Austin', '../img/cleric.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Kevin', '../img/rogue.png', 'martial arts', '#1F6212', knownArray, interestArray);
+  new Profile('Ramon', '../img/monk.png', 'Racing motorsports', 'red', ['Javascript', 'HTML', 'CSS'], ['Python']);
+  new Profile('Zach', '../img/wizzard.png', 'Anime', '#49F3FF', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Sooz', '../img/rogue.png', 'Knitting', '#FFBD71', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Austin', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Kris', '../img/rogue.png', 'reading', '#B51A1F', ['Javascript', 'Python'], ['Java']);
   new Profile('Judah', '../img/druid.jpg', 'Cooking', 'black', ['Javascript', 'HTML', 'CSS'], ['C#']);
   new Profile('Carl', '../img/wizzard.png', 'Cooking', '#0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
@@ -85,7 +85,7 @@ function matchFinder (object, compareArray) {
       id: i,
       matches: matchNumber
     };
-    if (matchNumber >= 0) {
+    if (matchNumber >= 2) {
       matchArray.push(matchAndNumber);
     } else {
       missMatchArray.push(matchAndNumber);
@@ -106,6 +106,7 @@ function addMatchingText () {
   mainEl.appendChild(h2El3);
   var h2El4 = document.createElement('h2');
   h2El4.textContent = 'Classmates you coudl learn from:';
+  sectionEl.appendChild(h2El4);
 }
 
 // Create and appened card
@@ -146,6 +147,9 @@ function updateDisplay (matchArray) {
   headerEl.appendChild(createCard(newUserProfiles));
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
+  }
+  for (var j in matchArray) {
+    sectionEl.appendChild(createCard(Profile.allProfiles[missMatchArray[j].id]));
   }
 }
 
