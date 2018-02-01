@@ -14,6 +14,11 @@ main {
   margin: auto;
 }
 
+#misMatchSection {
+  width: 960px;
+  margin: auto;
+}
+
 header {
   width: 960px;
   margin: auto;
@@ -59,6 +64,10 @@ div{
 } 
 
 main div:nth-child(3n) {
+  margin: 30px 0 0 0;
+}
+
+#misMatchSection div:nth-child(3n) {
   margin: 30px 0 0 0;
 }
 
@@ -111,7 +120,6 @@ header img, main img {
   max-width: 100%;
   margin: 0;
 }
-
 
 header div {
   margin: 0 auto;

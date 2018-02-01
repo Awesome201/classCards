@@ -25,7 +25,6 @@ a:link{
   text-decoration: none;
 }
 
-
 a{
   color:#874D63;
 }
@@ -70,6 +69,7 @@ section.footer {
   text-align: center;
   margin-top: 40px;
 }
+
 section.footer p{
   margin:10px;  
   font-family: 'Raleway', sans-serif;
@@ -125,7 +125,6 @@ img {
 #card-img{
   width:80%;
   text-align: left;
-  
 }
 
 p{
@@ -143,6 +142,7 @@ main {
 
 div{
   display: inline-block;
+  vertical-align: top;
 }
 
 /* entire container, keeps perspective */
