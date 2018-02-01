@@ -147,7 +147,7 @@ function updateDisplay (matchArray) {
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
-  for (var j in matchArray) {
+  for (var j in missMatchArray) {
     sectionEl.appendChild(createCard(Profile.allProfiles[missMatchArray[j].id]));
   }
 }
