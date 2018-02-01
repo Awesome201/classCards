@@ -8,6 +8,7 @@ if (localStorage.getItem('userName') === null) {
 // declare global variables
 var mainEl = document.getElementById('content');
 var headerEl = document.getElementById('userCard');
+var sectionEl = document.getElementById('misMatchSection');
 
 // Add obj array
 var matchArray = [];
@@ -93,6 +94,20 @@ function matchFinder (object, compareArray) {
   }
 }
 
+function addMatchingText () {
+  var h2El1 = document.createElement('h2');
+  h2El1.textContent = 'You matched with: ' + matchArray.length + ' classmates.';
+  headerEl.appendChild(h2El1);
+  var h2El2 = document.createElement('h2');
+  h2El2.textContent = 'You could learn from: ' + missMatchArray.length + ' classmates.';
+  headerEl.appendChild(h2El2);
+  var h2El3 = document.createElement('h2');
+  h2El3.textContent = 'Your Matches: ';
+  mainEl.appendChild(h2El3);
+  var h2El4 = document.createElement('h2');
+  h2El4.textContent = 'Classmates you coudl learn from:';
+}
+
 // Create and appened card
 function createCard (profileObj) {
   var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
@@ -137,4 +152,5 @@ function updateDisplay (matchArray) {
 localStorageHandler();
 builtInProfiles();
 matchFinder(newUserProfiles, Profile.allProfiles);
+addMatchingText();
 updateDisplay(matchArray);
