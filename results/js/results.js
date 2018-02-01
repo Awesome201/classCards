@@ -38,16 +38,15 @@ function localStorageHandler () {
 
 // create test instance of objects
 function builtInProfiles () {
-  new Profile('Kevin', '../img/rogue.png', 'martial arts', '#1F6212', knownArray, interestArray);
-  new Profile('Ramon', '../img/monk.png', 'Racing motorsports', 'red', ['Javascript', 'HTML', 'CSS'], ['Python']);
-  new Profile('Zach', '../img/wizzard.png', 'Anime', '#49F3FF', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
-  new Profile('Sooz', '../img/rogue.png', 'Knitting', '#FFBD71', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
-  new Profile('Austin', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Kris', '../img/rogue.png', 'reading', '#B51A1F', ['Javascript', 'Python'], ['Java']);
-  new Profile('Judah', '../img/druid.jpg', 'Cooking', 'black', ['Javascript', 'HTML', 'CSS'], ['C#']);
-  new Profile('Carl', '../img/wizzard.png', 'Cooking', '#0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
-  new Profile('Jose', '../img/rogue.png', 'Youtubing', '#af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
-  new Profile('Allie', '../img/wizzard.png', 'Youtubing', '#4E5AFF', ['Javascript', 'HTML', 'CSS'], ['Python']);
+  new Profile('Kevin', '../img/rogue.png', 'martial arts', '1F6212', knownArray, interestArray);
+  new Profile('Ramon', '../img/monk.png', 'Racing motorsports', 'FF0000', ['Javascript', 'HTML', 'CSS'], ['Python']);
+  new Profile('Zach', '../img/wizzard.png', 'Anime', '49F3FF', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Sooz', '../img/rogue.png', 'Knitting', 'FFBD71', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Austin', '../img/fighter.png', 'martial arts', '00ff00', knownArray, interestArray);
+  new Profile('Kris', '../img/rogue.png', 'reading', 'B51A1F', ['Javascript', 'Python'], ['Java']);
+  new Profile('Judah', '../img/druid.jpg', 'Cooking', '000000', ['Javascript', 'HTML', 'CSS'], ['C#']);
+  new Profile('Carl', '../img/wizzard.png', 'Cooking', '0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
+  new Profile('Jose', '../img/rogue.png', 'Youtubing', 'af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
 }
 
 // Li builder
@@ -127,16 +126,15 @@ function createCard (profileObj) {
   var imgEl = document.createElement('img'); // Create the img element for the avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
-  divElFront.style.backgroundColor = profileObj.userColor;
+  divElFront.style.backgroundColor = ('#' + profileObj.userColor);
   divElFront.appendChild(imgEl);
   divElFlipper.appendChild(divElFront);
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', profileObj.userHobby));
-  ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
   ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
   ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
-  divElBack.style.backgroundColor = profileObj.userColor;
+  divElBack.style.backgroundColor = ('#' + profileObj.userColor);
   divElBack.appendChild(ulEl);
   divElFlipper.appendChild(divElBack);
   divElFlipContainer.appendChild(divElFlipper);
