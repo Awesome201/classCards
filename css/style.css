@@ -36,6 +36,11 @@ h1{
 }
 
 h2{
+  line-height: 2rem;
+  margin-left: 30px;
+  margin-top:10px;
+  margin-right:30px;
+  margin-bottom: 10px; 
   font-size: 24px;
 }
 
@@ -105,6 +110,7 @@ button{
 
 #loginForm{
   margin: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 
 img {
@@ -112,7 +118,7 @@ img {
 }
 
 p{
-  line-height: 1.5rem;
+  line-height: 2rem;
   margin-left: 30px;
   margin-top:10px;
   margin-right:30px;
