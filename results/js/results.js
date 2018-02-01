@@ -41,7 +41,7 @@ function builtInProfiles () {
   new Profile('Kevin', '../img/rogue.png', 'martial arts', '1F6212', knownArray, interestArray);
   new Profile('Ramon', '../img/monk.png', 'Racing motorsports', 'FF0000', ['Javascript', 'HTML', 'CSS'], ['Python']);
   new Profile('Zach', '../img/wizzard.png', 'Anime', '49F3FF', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
-  new Profile('Sooz', '../img/rogue.png', 'Knitting', 'FFBD71', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Sooz', '../img/rogue.png', 'Knitting', 'FF8C00', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
   new Profile('Austin', '../img/fighter.png', 'martial arts', '00ff00', knownArray, interestArray);
   new Profile('Kris', '../img/rogue.png', 'reading', 'B51A1F', ['Javascript', 'Python'], ['Java']);
   new Profile('Judah', '../img/druid.jpg', 'Cooking', '000000', ['Javascript', 'HTML', 'CSS'], ['C#']);
