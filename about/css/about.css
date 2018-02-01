@@ -26,6 +26,18 @@ eggplant #874D63 */
  transform: rotateY(180deg);
 }
 
+#profile-img{
+  height: 155px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+#profile-pic{
+  height: 155px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
 .front {
   position: absolute;
   width: 100%;
