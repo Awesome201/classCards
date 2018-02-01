@@ -42,8 +42,9 @@ function builtInProfiles () {
   new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Austin', '../img/cleric.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Kris', '../img/rogue.jpg', 'reading', '#B51A1F', ['Javascript', 'Python'], ['Java']);
+  new Profile('Judah', '../img/druid.jpg', 'Cooking', 'black', ['Javascript', 'HTML', 'CSS'], ['C#']);
+  new Profile('Carl', '../img/wizzard.jpg', 'Cooking', '#0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
 }
 
 // Li builder
@@ -82,7 +83,7 @@ function matchFinder (object, compareArray) {
       id: i,
       matches: matchNumber
     };
-    if (matchNumber >= 3) {
+    if (matchNumber >= 0) {
       matchArray.push(matchAndNumber);
     } else {
       missMatchArray.push(matchAndNumber);
