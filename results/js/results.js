@@ -7,6 +7,7 @@ if (localStorage.getItem('userName') === null) {
 
 // declare global variables
 var mainEl = document.getElementById('content');
+var headerEl = document.getElementById('userCard');
 
 // Add obj array
 var matchArray = [];
@@ -125,7 +126,7 @@ function createCard (profileObj) {
 
 //Display the matching cards
 function updateDisplay (matchArray) {
-  createCard(newUserProfiles);
+  headerEl.appendChild(createCard(newUserProfiles));
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
