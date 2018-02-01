@@ -47,6 +47,7 @@ function builtInProfiles () {
   new Profile('Judah', '../img/druid.jpg', 'Cooking', 'black', ['Javascript', 'HTML', 'CSS'], ['C#']);
   new Profile('Carl', '../img/wizzard.png', 'Cooking', '#0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
   new Profile('Jose', '../img/rogue.png', 'Youtubing', '#af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
+  new Profile('Allie', '../img/wizzard.png', 'Youtubing', '#4E5AFF', ['Javascript', 'HTML', 'CSS'], ['Python']);
 }
 
 // Li builder
@@ -148,7 +149,7 @@ function updateDisplay (matchArray) {
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
-  for (var j in matchArray) {
+  for (var j in missMatchArray) {
     sectionEl.appendChild(createCard(Profile.allProfiles[missMatchArray[j].id]));
   }
 }
