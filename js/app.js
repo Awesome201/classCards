@@ -31,7 +31,6 @@ function createCard () {
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', 'Your info here'));
-  ulEl.appendChild(buildLiEl('Color: ', 'Your info here'));
   ulEl.appendChild(buildLiEl('Code Known : ', 'Your info here'));
   ulEl.appendChild(buildLiEl('Code Interest : ', 'Your info here'));
   divElBack.appendChild(ulEl);
