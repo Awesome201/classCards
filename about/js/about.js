@@ -96,20 +96,22 @@ Profile.prototype.render = function () {
   divElBack.style.backgroundColor = this.userColor;
   divElFlipper.appendChild(divElBack);
 
-  var profileImage = document.createElement('img');
-  profileImage.src = this.userAvatar;
-  profileImage.className = 'holdsImgs';
-  divElFront.appendChild(profileImage);
-
   var userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
   userNameElement.className = 'userNames';
   divElFront.appendChild(userNameElement);
 
+  var profileImage = document.createElement('img');
+  profileImage.id = 'profile-img';
+  profileImage.src = this.userAvatar;
+  profileImage.className = 'holdsImgs';
+  divElFront.appendChild(profileImage);
+
   var ulEl = document.createElement('ul');
   divElFront.appendChild(ulEl);
 
   var addPicToProfile = document.createElement('img');
+  addPicToProfile.id = 'profile-pic';
   addPicToProfile.src = this.aboutUsPic;
   addPicToProfile.className = 'holdsProfilePic';
   divElBack.appendChild(addPicToProfile);
