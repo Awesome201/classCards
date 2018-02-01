@@ -31,6 +31,11 @@ function createCard () {
   h2El.textContent = 'This could be you! Hover for more'; // Set its contents to the userName
   divElFront.appendChild(h2El); // appened the h2 to the div
   divElFlipper.appendChild(divElFront);
+
+  var gifOfAllAvatars = document.createElement('img');
+  gifOfAllAvatars.src = 'img/avatargif.gif';
+  h2El.appendChild(gifOfAllAvatars);
+
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', 'Your info here'));
