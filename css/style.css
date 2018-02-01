@@ -69,6 +69,7 @@ section.footer {
   text-align: center;
   margin-top: 40px;
 }
+
 section.footer p{
   margin:10px;  
   font-family: 'Raleway', sans-serif;
@@ -124,7 +125,6 @@ img {
 #card-img{
   width:80%;
   text-align: left;
-  
 }
 
 p{
