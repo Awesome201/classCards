@@ -1,7 +1,65 @@
-label,input{
-  display: block;
+form{
+  widows: 960px;
 }
 
-img {
+fieldset{
+  text-align: left;
+  margin: 30px;
+  color:White;
+  font-size: 16px;
+} 
+
+legend {
+  font-size: 40px;
+}
+
+#nav-link{
+ margin:20px;
+}
+
+#avatar img {
+  margin-bottom: 0px;
+}
+
+p{
+  margin:20px; 
+  font-size: 20px;
+  margin-top: 0px; 
+}
+
+#avatar li{
+  text-align: center;
   display: inline-block;
+  margin-bottom: 0px;
+}
+
+label {
+  display: block;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#multichoice n{
+  display:inline;
+}
+
+.language li{
+  text-align: center;
+  display: inline-block;
+  margin: 30px;
+  font-size: 20px;
+}
+
+select {
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+#reset{
+  margin-left: 50px;
 }
