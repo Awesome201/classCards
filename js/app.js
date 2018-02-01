@@ -1,5 +1,11 @@
 'use strict';
 
+//give users notice that our site is best viewed on latest
+if (localStorage.getItem('alert') === null){
+  alert('Please note that this site is best viewed on the latest version of Chrome.');
+  localStorage.setItem('alert', '1');
+}
+
 // userName variable
 var userName;
 
@@ -28,6 +34,11 @@ function createCard () {
   h2El.textContent = 'This could be you! Hover for more'; // Set its contents to the userName
   divElFront.appendChild(h2El); // appened the h2 to the div
   divElFlipper.appendChild(divElFront);
+
+  var gifOfAllAvatars = document.createElement('img');
+  gifOfAllAvatars.src = 'img/avatargif.gif';
+  h2El.appendChild(gifOfAllAvatars);
+
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', 'Your info here'));
