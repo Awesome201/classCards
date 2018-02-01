@@ -17,6 +17,7 @@ main {
 div{
   display: inline-block;
 }
+
 /* entire container, keeps perspective */
  .flipContainer {
   width: 300px;
@@ -76,8 +77,12 @@ main div:nth-child(3n) {
   margin: 5px 0 0 5px;
 }
 
-main img {
+header img, main img {
   height: 300px;
   max-width: 100%;
   margin: 0;
+}
+
+header div {
+  margin: 0 auto;
 }
