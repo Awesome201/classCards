@@ -83,8 +83,6 @@ function handleLogin (e) {
   localStorage.userName = JSON.stringify(userName);
   window.location = 'profile/profile.html';
 }
-//invoke browser check function
-browserDetection();
 
 //call login function on submit
 formElLoginForm.addEventListener('submit', handleLogin);
