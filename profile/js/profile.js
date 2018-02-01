@@ -58,7 +58,7 @@ function addNewUser(event) {
 
   //create new user object instance from the constructor function
   new Profile(newUserName,newUserAvatar,newUserHobby,newUserColor,newKnownLanguage,newInterestedLanguage);
-  
+
   //put new user into local storage for results page
   for(var k in Profile.allProfiles) {
     localStorage.setItem('newUserName',JSON.stringify(Profile.allProfiles[k]));
@@ -69,11 +69,28 @@ function addNewUser(event) {
 
 //allow returning users (who haven't cleared their local storage) to edit their information
 function editUser () {
+  var langTotal = 9;
   var placeHolderInfo = JSON.parse(localStorage.getItem('newUserName'));
-  var questionOne = document.getElementById('userName').value = placeHolderInfo.userName;
-  var questionTwo = document.getElementById('userAvatar').value = placeHolderInfo.userAvatar;
-  var questionThree = document.getElementById('userColor').value = placeHolderInfo.userColor;
-  var questionFour = document.getElementById('userHobby').value = placeHolderInfo.userHobby;
+  document.getElementById('userName').value = placeHolderInfo.userName;
+  document.getElementById('userAvatar').value = placeHolderInfo.userAvatar;
+  document.getElementById('userColor').value = placeHolderInfo.userColor;
+  document.getElementById('userHobby').value = placeHolderInfo.userHobby;
+  for (var m = 0; m < langTotal; m++) {
+    var n = 0;
+    for (n in placeHolderInfo.knownLanguage) {
+      if(document.getElementById('known' + m).value === placeHolderInfo.knownLanguage[n]){
+        document.getElementById('known' + m).checked = true;
+      }
+    }
+  }
+  for (m = 0; m < langTotal; m++) {
+    n = 0;
+    for (n in placeHolderInfo.knownLanguage) {
+      if(document.getElementById('interested' + m).value === placeHolderInfo.interestedLanguage[n]){
+        document.getElementById('interested' + m).checked = true;
+      }
+    }
+  }
 }
 //allow users to clear local storage and delete their profile if they want
 function resetStorage() {
