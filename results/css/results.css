@@ -63,7 +63,6 @@ main div:nth-child(3n) {
 }
 
 .back {
-  background-color: #FAF9EE;
   height: 100%;
   width: 100%;
   transform: rotateY(180deg);
