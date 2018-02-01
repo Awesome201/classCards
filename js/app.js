@@ -36,7 +36,8 @@ function createCard () {
   divElFlipper.appendChild(divElFront);
 
   var gifOfAllAvatars = document.createElement('img');
-  gifOfAllAvatars.src = 'img/avatargif.gif';
+  gifOfAllAvatars.id = 'card-img';
+  gifOfAllAvatars.src = 'img/avatar.gif';
   h2El.appendChild(gifOfAllAvatars);
 
   // add interests

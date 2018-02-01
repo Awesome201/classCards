@@ -10,8 +10,9 @@ eggplant #874D63 */
 }
 
 .card{
-  width: 270px;
-  margin: 0px 0px 0px 30px;
+  width: 275px;
+  height: 580px;
+  margin: 15px;
 }
 
 .flipper {
@@ -24,6 +25,22 @@ eggplant #874D63 */
 
 .card:hover .flipper {
  transform: rotateY(180deg);
+}
+
+#profile-img{
+  height: 155px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+#profile-pic{
+  height: 155px;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+#last-lang{
+  padding-bottom: 10px;
 }
 
 .front {
@@ -55,6 +72,7 @@ eggplant #874D63 */
 
 .container {
   width: 270px;
+  height: 580px;
 }
 
 .userNames {

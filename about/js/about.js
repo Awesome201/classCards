@@ -96,20 +96,22 @@ Profile.prototype.render = function () {
   divElBack.style.backgroundColor = this.userColor;
   divElFlipper.appendChild(divElBack);
 
-  var profileImage = document.createElement('img');
-  profileImage.src = this.userAvatar;
-  profileImage.className = 'holdsImgs';
-  divElFront.appendChild(profileImage);
-
   var userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
   userNameElement.className = 'userNames';
   divElFront.appendChild(userNameElement);
 
+  var profileImage = document.createElement('img');
+  profileImage.id = 'profile-img';
+  profileImage.src = this.userAvatar;
+  profileImage.className = 'holdsImgs';
+  divElFront.appendChild(profileImage);
+
   var ulEl = document.createElement('ul');
   divElFront.appendChild(ulEl);
 
   var addPicToProfile = document.createElement('img');
+  addPicToProfile.id = 'profile-pic';
   addPicToProfile.src = this.aboutUsPic;
   addPicToProfile.className = 'holdsProfilePic';
   divElBack.appendChild(addPicToProfile);
@@ -128,6 +130,7 @@ Profile.prototype.render = function () {
   ulEl.appendChild(knownLanguageElement);
 
   var interestedLanguageElement = document.createElement('li');
+  interestedLanguageElement.id = 'last-lang';
   interestedLanguageElement.textContent = 'Coding Language Interests: ' + '\n' + this.interestedLanguage;
   ulEl.appendChild(interestedLanguageElement);
 
@@ -142,11 +145,11 @@ Profile.prototype.render = function () {
 };
 
 // new instances of the Profile object constructor
-new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#42ebf4', 'Java, CSS, HTML and JavaScript', 'C# and Python', '../img/zach.jpg', 'https://github.com/buphnezz', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
-new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#FFAC40', 'CSS, HTML, and JavaScript', 'C# and Python', '../img/sooz.png', 'https://github.com/FavoredFortune', 'As a software developer I’m keen to make people’s lives easier. Combining my development skills with my history as a strategic, integrated marketer, allows me to offer organizations great experience driving results through team collaboration. In my spare time you can find me bird watching, knitting, or acting as @apartment_cats press agent on Instagram.');
-new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'CSS, HTML, and  JavaScript', 'Python', 'https://placehold.it/155x155', 'https://github.com/austincmatteson', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
-new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'CSS, HTML, and JavaScript', 'Python', 'https://placehold.it/155x155', 'https://github.com/brickfaced', 'Cars, computers and video games have always been a part my life. Coding has only been my interest for a very small fraction of that time, but I enjoy it as much as the rest. As a software developer my goal is to work in my four wonders of the world.');
-new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp, CSS, HTML, and JavaScript', 'JavaScript', 'https://placehold.it/155x155', 'https://github.com/knyghtLyght', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Zachary', '../img/wizzard.png', 'watching anime', '#42ebf4', 'Java, CSS, HTML and JavaScript', 'C# and Python', '../img/zach.jpg', 'https://github.com/buphnezz', 'I’ve always enjoyed problem solving, tinkering and making things better!  Growing up I loved playing with my Teenage Mutant Ninja Turtles.  Whenever a toy broke, I would rebuild or upgrade the toy using spare parts or items around the house.  Through software development, I’ve reconnected with that part of my life.');
+new Profile('Suzanne', '../img/rogue.png', 'knitting', '#FFAC40', 'CSS, HTML, and JavaScript', 'C# and Python', '../img/sooz.png', 'https://github.com/FavoredFortune', 'As a software developer I’m keen to make people’s lives easier. Combining my development skills with my history as a strategic, integrated marketer, allows me to offer organizations great experience driving results through team collaboration. In my spare time you can find me bird watching, knitting, or with my cats.');
+new Profile('Austin', '../img/fighter.png', 'watching movies', '#808080', 'CSS, HTML, and  JavaScript', 'Python', '../img/austin.jpg', 'https://github.com/austincmatteson', 'Hailing from the Emerald City of Angels that Never Sleeps, I\'m excited to bring the perspectives of three corners of the US together in the software development space. I bring an eclectic nature, from hipster music tastes, to foreign films, to even tarot cards. And if you have a pet, we\'re best friends now.');
+new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'CSS, HTML, and JavaScript', 'Python', '../img/ramon.jpeg', 'https://github.com/brickfaced', 'Cars, computers and video games have always been a part my life. Coding has only been my interest for a very small fraction of that time, but I enjoy it as much as the rest. As a software developer my goal is to work in my four wonders of the world.');
+new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp, CSS, HTML, and JavaScript', 'JavaScript', '../img/kevin.jpg', 'https://github.com/knyghtLyght', 'An experienced leader and support specialist with a technology background and a passion for coordination, efficiency, and leveraging technology to create better outcomes.Passionate about storytelling and interactive media as the next great storytelling medium.');
 
 createOnlyOurAboutUsCards();
 checkLocalStorage();

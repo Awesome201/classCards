@@ -21,6 +21,11 @@ nav ol li {
   font-size: 20px; 
 }
 
+a:link{
+  text-decoration: none;
+}
+
+
 a{
   color:#874D63;
 }
@@ -82,7 +87,7 @@ fieldset{
   margin: 30px;
   color:White;
   font-size: 16px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 label,input{
@@ -115,6 +120,12 @@ button{
 
 img {
  margin: 30px;
+}
+
+#card-img{
+  width:80%;
+  text-align: left;
+  
 }
 
 p{
@@ -202,4 +213,8 @@ main div:nth-child(3n) {
 
 .back1 li {
   margin: 5px 0 0 5px;
+}
+
+#content{
+  width: 960px;
 }
