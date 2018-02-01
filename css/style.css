@@ -166,7 +166,7 @@ main div:nth-child(3n) {
 }
 
 .front1 {
-  background-color: #FAF9EE;
+  background-color: #874D63;
   position: absolute;
   width: 300px;
   height: 100%;
@@ -183,7 +183,7 @@ main div:nth-child(3n) {
 }
 
 .back1 {
-  background-color: #FAF9EE;
+  background-color: #874D63;
   height: 100%;
   width: 100%;
   transform: rotateY(180deg);
