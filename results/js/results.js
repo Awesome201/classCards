@@ -118,6 +118,7 @@ function createCard (profileObj) {
   ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
   ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
   ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
+  divElBack.style.backgroundColor = profileObj.userColor;
   divElBack.appendChild(ulEl);
   divElFlipper.appendChild(divElBack);
   divElFlipContainer.appendChild(divElFlipper);

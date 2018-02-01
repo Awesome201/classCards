@@ -82,11 +82,12 @@ fieldset{
 
 label,input{
   margin: 10px; 
+  font-size: 30px;
 }
 
 legend{
   padding: 10px;
-  font-size: 18px;
+  font-size: 40px;
 }
 
 button{
@@ -118,72 +119,79 @@ p{
   margin-bottom: 10px;  
 }
 
-/* section{
-  display: block;
-  padding-top: 25px;
-  text-align: center;
+main {
+  width: 960px;
+  margin-left: 40%;
 }
 
-section h2{
-  font-size: 20px;
-} */
-
-.flipContainer1 {
+div{
   display: inline-block;
-  align-content: center;
+}
+
+/* entire container, keeps perspective */
+ .flipContainer {
   width: 300px;
   height: 350px;
-  perspective: 1000;
+  perspective: 1000px;
   z-index: 1;
-  text-align: center;
+  margin: 30px 30px 0 0;
   color: black;
-  
+} 
+
+main div:nth-child(3n) {
+  margin: 30px 0 0 0;
 }
 
+/* entire container, keeps perspective */
+.flipContainer1 {
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+  z-index: 1;
+  margin: 30px 30px 0 0;
+  color: black;
+} 
+
 .flipper1 {
-  display: inline-block;
-  align-content: center;
-  width: 100%;
+  width: 300px;
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.6s linear;
-  background-color: #FAF9EE;
   border: 5px ridge white;
-  color:black;
 }
 
 /* flip the pane when hovered */
 .flipContainer1:hover .flipper1 {
   transform: rotateY(180deg);
   box-shadow: -5px 5px 5px #aaa;
-  color: black;
 }
 
 .front1 {
+  background-color: #874D63;
   position: absolute;
-  width: 100%;
+  width: 300px;
   height: 100%;
   backface-visibility: hidden;
   text-align: center;
   font-family: 'Permanent Marker', cursive;
-}
-
-.front h2 {
-  font-size: 150%;
-  font-family: 'Permanent Marker', cursive;
-  color:#874d63;
+  text-shadow: 0px 0px 30px black;
 }
 
 .front1 h2 {
   font-size: 120%;
+  font-family: 'Permanent Marker', cursive;
+  color: white;
 }
 
 .back1 {
-  background-color: #FAF9EE;
+  background-color: #874D63;
+  height: 100%;
+  width: 100%;
   transform: rotateY(180deg);
   backface-visibility: hidden;
   font-family: 'Shadows Into Light', cursive;
-  color:#874d63;
+  color: white;
+  text-shadow: 0px 0px 30px black;
 }
 
 .back1 li {
