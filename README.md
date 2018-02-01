@@ -53,6 +53,9 @@ https://stackoverflow.com/questions/23780092/floating-li-with-different-heights
 - Source used to help create shadow effect on title of cards so it will show no matter what color user selects:
 https://stackoverflow.com/questions/11323813/how-to-outline-text-in-html-css
 
+- Source used to create a animated gif of all our available avatar choices.
+http://gifmaker.org/
+
 ## *Questions or suggestions?* 
 
 Please contact us at Awesome 201 on GitHub
