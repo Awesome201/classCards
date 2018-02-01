@@ -21,6 +21,11 @@ nav ol li {
   font-size: 20px; 
 }
 
+a:link{
+  text-decoration: none;
+}
+
+
 a{
   color:#874D63;
 }
@@ -115,6 +120,12 @@ button{
 
 img {
  margin: 30px;
+}
+
+#card-img{
+  width:80%;
+  text-align: left;
+  
 }
 
 p{
