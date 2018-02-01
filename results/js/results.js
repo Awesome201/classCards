@@ -132,7 +132,6 @@ function createCard (profileObj) {
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', profileObj.userHobby));
-  ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
   ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
   ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
   divElBack.style.backgroundColor = ('#' + profileObj.userColor);
