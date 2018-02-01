@@ -1,7 +1,10 @@
 'use strict';
 
 //give users notice that our site is best viewed on latest
-alert('Please note that this site is best viewed on the latest version of Chrome.');
+if (localStorage.getItem('alert') === null){
+  alert('Please note that this site is best viewed on the latest version of Chrome.');
+  localStorage.setItem('alert', '1');
+}
 
 // userName variable
 var userName;

@@ -1,7 +1,10 @@
 'use strict';
 
 //give users notice that our site is best viewed on latest
-alert('Please note that this site is best viewed on the latest version of Chrome.');
+if (localStorage.getItem('alert') === null){
+  alert('Please note that this site is best viewed on the latest version of Chrome.');
+  localStorage.setItem('alert', '1');
+}
 
 // retrieve the 'card' class from the DOM
 var cardElement = document.getElementById('all-cards');
@@ -141,9 +144,9 @@ Profile.prototype.render = function () {
 // new instances of the Profile object constructor
 new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#42ebf4', 'Java, CSS, HTML and JavaScript', 'C# and Python', '../img/zach.jpg', 'https://github.com/buphnezz', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
 new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#FFAC40', 'CSS, HTML, and JavaScript', 'C# and Python', '../img/sooz.png', 'https://github.com/FavoredFortune', 'As a software developer I’m keen to make people’s lives easier. Combining my development skills with my history as a strategic, integrated marketer, allows me to offer organizations great experience driving results through team collaboration. In my spare time you can find me bird watching, knitting, or acting as @apartment_cats press agent on Instagram.');
-new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'CSS, HTML, and  JavaScript', 'Python', 'https://placeholder.com/155x155', 'https://github.com/austincmatteson', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
-new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'CSS, HTML, and JavaScript', 'Python', 'https://placeholder.com/155x155', 'https://github.com/brickfaced', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
-new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp, CSS, HTML, and JavaScript', 'JavaScript', 'https://placeholder.com/155x155', 'https://github.com/knyghtLyght', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'CSS, HTML, and  JavaScript', 'Python', 'https://placehold.it/155x155', 'https://github.com/austincmatteson', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'CSS, HTML, and JavaScript', 'Python', 'https://placehold.it/155x155', 'https://github.com/brickfaced', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp, CSS, HTML, and JavaScript', 'JavaScript', 'https://placehold.it/155x155', 'https://github.com/knyghtLyght', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
 
 createOnlyOurAboutUsCards();
 checkLocalStorage();
