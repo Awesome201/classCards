@@ -4,6 +4,11 @@ Salmon #C3866B
 eggplant #874D63 */
 
 
+#all-cards {
+  width: 960px;
+  margin: auto;
+}
+
 .card{
   width: 270px;
   margin: 0px 0px 0px 30px;
