@@ -14,6 +14,11 @@ main {
   margin: auto;
 }
 
+header {
+  width: 960px;
+  margin: auto;
+}
+
 div{
   display: inline-block;
 }
@@ -77,7 +82,7 @@ main div:nth-child(3n) {
 }
 
 header img, main img {
-  height: 300px;
+  height: 280px;
   max-width: 100%;
   margin: 0;
 }

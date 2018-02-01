@@ -41,7 +41,7 @@ function builtInProfiles () {
   new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/cleric.jpg', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Austin', '../img/cleric.jpg', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Zach', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
 }
@@ -77,7 +77,6 @@ function matchFinder (object, compareArray) {
         matchNumber++;
       }
     }
-    console.log(matchNumber);
     // Object literal to hold the index of the object in allProfiles and the number of matches
     var matchAndNumber = {
       id: i,
@@ -98,10 +97,10 @@ function createCard (profileObj) {
   divElFlipContainer.setAttribute('id', profileObj.userName + 'div'); // Set the div ID to the
   divElFlipContainer.setAttribute('class', 'flipContainer');
   var divElFlipper = document.createElement('div');
-  divElFlipper.setAttribute('class', 'flipper');
-  var divElFront = document.createElement('div');
+  divElFlipper.setAttribute('class', 'flipper'); // Div that holds the transition
+  var divElFront = document.createElement('div'); //Div that holds the front side of the card
   divElFront.setAttribute('class', 'front');
-  var divElBack = document.createElement('div');
+  var divElBack = document.createElement('div'); // Div for the back of the card
   divElBack.setAttribute('class', 'back');
   var h2El = document.createElement('h2'); // Create the h2 element
   h2El.textContent = profileObj.userName; // Set its contents to the userName
