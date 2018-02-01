@@ -59,6 +59,7 @@ http://gifmaker.org/
 - Source used to help create browser dector for home page and about us:
 https://www.learningjquery.com/2017/05/how-to-use-javascript-to-detect-browser
 
+- Avatar images from Google Images
 
 
 ## *Questions or suggestions?* 
