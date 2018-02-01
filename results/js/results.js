@@ -8,6 +8,7 @@ if (localStorage.getItem('userName') === null) {
 // declare global variables
 var mainEl = document.getElementById('content');
 var headerEl = document.getElementById('userCard');
+var sectionEl = document.getElementById('misMatchSection');
 
 // Add obj array
 var matchArray = [];
@@ -37,13 +38,15 @@ function localStorageHandler () {
 
 // create test instance of objects
 function builtInProfiles () {
-  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', '#BADA55', knownArray, interestArray);
-  new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Austin', '../img/cleric.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/fighter.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Kevin', '../img/rogue.png', 'martial arts', '1F6212', knownArray, interestArray);
+  new Profile('Ramon', '../img/monk.png', 'Racing motorsports', 'FF0000', ['Javascript', 'HTML', 'CSS'], ['Python']);
+  new Profile('Zach', '../img/wizzard.png', 'Anime', '49F3FF', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Sooz', '../img/rogue.png', 'Knitting', 'FFBD71', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
+  new Profile('Austin', '../img/fighter.png', 'martial arts', '00ff00', knownArray, interestArray);
+  new Profile('Kris', '../img/rogue.png', 'reading', 'B51A1F', ['Javascript', 'Python'], ['Java']);
+  new Profile('Judah', '../img/druid.jpg', 'Cooking', '000000', ['Javascript', 'HTML', 'CSS'], ['C#']);
+  new Profile('Carl', '../img/wizzard.png', 'Cooking', '0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
+  new Profile('Jose', '../img/rogue.png', 'Youtubing', 'af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
 }
 
 // Li builder
@@ -82,13 +85,33 @@ function matchFinder (object, compareArray) {
       id: i,
       matches: matchNumber
     };
-    if (matchNumber >= 3) {
+    if (matchNumber >= 2) {
       matchArray.push(matchAndNumber);
     } else {
       missMatchArray.push(matchAndNumber);
     }
     matchNumber = 0;
   }
+}
+
+//Create user messaging when showing results
+function addMatchingText () {
+  var h2El1 = document.createElement('h2');
+  h2El1.id = 'results';
+  h2El1.textContent = 'You matched with ' + matchArray.length + ' classmate(s).';
+  headerEl.appendChild(h2El1);
+  var h2El2 = document.createElement('h2');
+  h2El2.id = 'results';
+  h2El2.textContent = 'You could learn from ' + missMatchArray.length + ' classmate(s).';
+  headerEl.appendChild(h2El2);
+  var h2El3 = document.createElement('h2');
+  h2El3.id = 'results';
+  h2El3.textContent = 'Your Matches ';
+  mainEl.appendChild(h2El3);
+  var h2El4 = document.createElement('h2');
+  h2El4.id = 'results';
+  h2El4.textContent = 'Classmates you could learn from:';
+  sectionEl.appendChild(h2El4);
 }
 
 // Create and appened card
@@ -108,16 +131,15 @@ function createCard (profileObj) {
   var imgEl = document.createElement('img'); // Create the img element for the avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
-  divElFront.style.backgroundColor = profileObj.userColor;
+  divElFront.style.backgroundColor = ('#' + profileObj.userColor);
   divElFront.appendChild(imgEl);
   divElFlipper.appendChild(divElFront);
   // add interests
   var ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', profileObj.userHobby));
-  ulEl.appendChild(buildLiEl('Color: ', profileObj.userColor));
   ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
   ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
-  divElBack.style.backgroundColor = profileObj.userColor;
+  divElBack.style.backgroundColor = ('#' + profileObj.userColor);
   divElBack.appendChild(ulEl);
   divElFlipper.appendChild(divElBack);
   divElFlipContainer.appendChild(divElFlipper);
@@ -130,9 +152,13 @@ function updateDisplay (matchArray) {
   for (var i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
+  for (var j in missMatchArray) {
+    sectionEl.appendChild(createCard(Profile.allProfiles[missMatchArray[j].id]));
+  }
 }
 
 localStorageHandler();
 builtInProfiles();
 matchFinder(newUserProfiles, Profile.allProfiles);
+addMatchingText();
 updateDisplay(matchArray);

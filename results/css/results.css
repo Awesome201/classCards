@@ -23,13 +23,38 @@ div{
   display: inline-block;
 }
 
+#results{
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left:5px  ;
+  color:White;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#misMatchSection{
+  text-align: left;
+  width: 960px;
+  margin: auto;;
+  color:White;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#misMatchSection img{
+  height: 280px;
+  max-width: 100%;
+  margin: 0;
+}
+
 /* entire container, keeps perspective */
  .flipContainer {
   width: 300px;
   height: 350px;
   perspective: 1000px;
   z-index: 1;
-  margin: 30px 30px 0 0;
+  margin: 30px 15px 0 15px;
   color: black;
 } 
 
@@ -86,6 +111,7 @@ header img, main img {
   max-width: 100%;
   margin: 0;
 }
+
 
 header div {
   margin: 0 auto;
