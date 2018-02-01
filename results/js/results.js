@@ -94,18 +94,23 @@ function matchFinder (object, compareArray) {
   }
 }
 
+//Create user messaging when showing results
 function addMatchingText () {
   var h2El1 = document.createElement('h2');
-  h2El1.textContent = 'You matched with: ' + matchArray.length + ' classmates.';
+  h2El1.id = 'results';
+  h2El1.textContent = 'You matched with ' + matchArray.length + ' classmate(s).';
   headerEl.appendChild(h2El1);
   var h2El2 = document.createElement('h2');
-  h2El2.textContent = 'You could learn from: ' + missMatchArray.length + ' classmates.';
+  h2El2.id = 'results';
+  h2El2.textContent = 'You could learn from ' + missMatchArray.length + ' classmate(s).';
   headerEl.appendChild(h2El2);
   var h2El3 = document.createElement('h2');
-  h2El3.textContent = 'Your Matches: ';
+  h2El3.id = 'results';
+  h2El3.textContent = 'Your Matches ';
   mainEl.appendChild(h2El3);
   var h2El4 = document.createElement('h2');
-  h2El4.textContent = 'Classmates you coudl learn from:';
+  h2El4.id = 'results';
+  h2El4.textContent = 'Classmates you could learn from:';
   sectionEl.appendChild(h2El4);
 }
 

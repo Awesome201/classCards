@@ -23,13 +23,23 @@ div{
   display: inline-block;
 }
 
+#results{
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left:5px  ;
+  color:White;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
 /* entire container, keeps perspective */
  .flipContainer {
   width: 300px;
   height: 350px;
   perspective: 1000px;
   z-index: 1;
-  margin: 30px 30px 0 0;
+  margin: 30px 15px 0 15px;
   color: black;
 } 
 
