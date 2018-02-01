@@ -68,7 +68,8 @@ main div:nth-child(3n) {
   transform: rotateY(180deg);
   backface-visibility: hidden;
   font-family: 'Shadows Into Light', cursive;
-  color: black;
+  color: white;
+  text-shadow: 0px 0px 30px black;
 }
 
 .back li {
