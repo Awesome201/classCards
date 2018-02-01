@@ -2,3 +2,117 @@
 butter #F2D387
 Salmon #C3866B
 eggplant #874D63 */
+
+body {
+  height: 100%;
+  background-color: #A8D2CB;
+  color:black;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+}
+
+header {
+  width: 960px;
+  margin: auto;
+}
+
+div{
+  display: inline-block;
+}
+
+#results{
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  margin-left:5px  ;
+  color:White;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#misMatchSection{
+  text-align: left;
+  width: 960px;
+  margin: auto;;
+  color:White;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#misMatchSection img{
+  height: 280px;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* entire container, keeps perspective */
+ .flipContainer {
+  width: 300px;
+  height: 350px;
+  perspective: 1000px;
+  z-index: 1;
+  margin: 30px 15px 0 15px;
+  color: black;
+} 
+
+main div:nth-child(3n) {
+  margin: 30px 0 0 0;
+}
+
+.flipper {
+  width: 300px;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.6s linear;
+  border: 5px ridge white;
+}
+
+/* flip the pane when hovered */
+.flipContainer:hover .flipper {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+
+.front {
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  backface-visibility: hidden;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: 0px 0px 30px black;
+}
+
+.front h2 {
+  font-size: 120%;
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+}
+
+.back {
+  height: 100%;
+  width: 100%;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  font-family: 'Shadows Into Light', cursive;
+  color: white;
+  text-shadow: 0px 0px 30px black;
+}
+
+.back li {
+  margin: 5px 0 0 5px;
+}
+
+header img, main img {
+  height: 280px;
+  max-width: 100%;
+  margin: 0;
+}
+
+
+header div {
+  margin: 0 auto;
+}

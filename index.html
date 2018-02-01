@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
   <head>
     <meta description = "Class Cards">
     <meta charset="utf-8">
     <title>Class Cards by Awesome 201</title>
+    <meta property="og:title" content="Class Cards" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.classcards.club/" />
+    <meta property="og:image" content= "http://www.classcards.club/img/ClassCardsLogo.png" />
+    <meta property="og:description" content="ClassCards is a fun way for classmates to connect with each other based on interests." />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Permanent+Marker|Raleway|Shadows+Into+Light" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css"> 
   </head>
   <body>
   <nav>
-    <img src = "https://placehold.it/200x100">
-    <h1 class ="center">Class Cards</h1>
+    <img src = "img/ClassCardsLogo.png">
     <ol id ="conditional-nav">
       <li id="nav-link"><a href="index.html">Home/Login</a></li>
       <li id="nav-link"><a href="about/about.html">About CC Creators</a></li>
-      <li class = "tiny" id="nav-link"><i>>>Currently on home page</i></li>
+      <li class = "tiny" id="nav-link1"><i>>>Currently on home page</i></li>
     </ol>
   </nav>
+  <section id="description">
+    <h2>Welcome to Class Cards</h2>
+    <p>This site is designed to help classmates find others with similar interests or complementary coding strengths. Get started and login now to fill out your profile and see who we can match you with!</p>
+  </section>
+  <main id="content"></main>
     <fieldset>
-      <legend>Login</legend>
+      <legend>Login/Sign-up</legend>
       <form name="loginForm" id="loginForm">
         <label for="userName">User Name:</label>
         <input id="userName" name="userName" type="text" required="">
-        <!-- <label for="password">Password:</label>
-        <input name="password" type="password"> -->
-        <button id="login">Log In</button>
+        <button id="login">Enter</button>
       </form>
-    </fieldset>
+    </fieldset>  
+    <section class="footer">
+      <p><i>Thank you for visting Class Cards by <a href="about/about.html">Awesome 201</i></a></p>
+      <p> Copyright 2018 </p>
+    </section>
     <script src="js/app.js"></script>
   </body>
 </html>
