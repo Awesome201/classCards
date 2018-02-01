@@ -33,6 +33,21 @@ div{
   font-family: 'Raleway', sans-serif;
 }
 
+#misMatchSection{
+  text-align: left;
+  width: 960px;
+  margin: auto;;
+  color:White;
+  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+}
+
+#misMatchSection img{
+  height: 280px;
+  max-width: 100%;
+  margin: 0;
+}
+
 /* entire container, keeps perspective */
  .flipContainer {
   width: 300px;
@@ -96,6 +111,7 @@ header img, main img {
   max-width: 100%;
   margin: 0;
 }
+
 
 header div {
   margin: 0 auto;
