@@ -40,7 +40,7 @@ function checkLocalStorage() {
 }
 
 // this holds all the properties for each Profile that will be generated. 
-function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, gitHubLink) {
+function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, aboutUsPic, gitHubLink, aboutUsProfile) {
   this.userName = userName;
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
@@ -48,6 +48,8 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
   this.gitHubLink = gitHubLink;
   this.knownLanguage = knownLanguage;
   this.interestedLanguage = interestedLanguage;
+  this.aboutUsProfile = aboutUsProfile;
+  this.aboutUsPic = aboutUsPic;
   Profile.allProfiles.push(this);
 }
 
@@ -101,26 +103,30 @@ Profile.prototype.render = function () {
   userNameElement.className = 'userNames';
   divElFront.appendChild(userNameElement);
 
-  // var ulEl = document.createElement('ul');
-  // divHoldTheCards.appendChild(ulEl);
+  var ulEl = document.createElement('ul');
+  divElFront.appendChild(ulEl);
   
-  
+  var addPicToProfile = document.createElement('img');
+  addPicToProfile.src = this.aboutUsPic;
+  addPicToProfile.className = 'holdsProfilePic';
+  divElBack.appendChild(addPicToProfile);
+
   var anchorForGitHubLink = document.createElement('a');
   anchorForGitHubLink.target = '_blank';
   anchorForGitHubLink.href = this.gitHubLink;
   divElBack.appendChild(anchorForGitHubLink);
 
   var hobbyElement = document.createElement('li');
-  hobbyElement.textContent = 'Current Hobby: ' + this.userHobby;
-  divElFront.appendChild(hobbyElement);
+  hobbyElement.textContent = 'Current Hobby: ' + '\n' + this.userHobby;
+  ulEl.appendChild(hobbyElement);
 
   var knownLanguageElement = document.createElement('li');
-  knownLanguageElement.textContent = 'Coding Languages Known: ' + this.knownLanguage;
-  divElFront.appendChild(knownLanguageElement);
+  knownLanguageElement.textContent = 'Coding Languages Known: ' + '\n' + this.knownLanguage;
+  ulEl.appendChild(knownLanguageElement);
 
   var interestedLanguageElement = document.createElement('li');
-  interestedLanguageElement.textContent = 'Coding Language Interests: ' + this.interestedLanguage;
-  divElFront.appendChild(interestedLanguageElement);
+  interestedLanguageElement.textContent = 'Coding Language Interests: ' + '\n' + this.interestedLanguage;
+  ulEl.appendChild(interestedLanguageElement);
 
   var buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
@@ -128,16 +134,16 @@ Profile.prototype.render = function () {
   anchorForGitHubLink.appendChild(buttonElement);
 
   var aboutUsDescriptionEl = document.createElement('p');
-  aboutUsDescriptionEl.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi accumsan diam imperdiet diam laoreet, in dictum sapien blandit.';
+  aboutUsDescriptionEl.textContent = this.aboutUsProfile;
   divElBack.appendChild(aboutUsDescriptionEl);
 }
 
 // new instances of the Profile object constructor
-new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java', 'JavaScript', 'https://github.com/buphnezz');
-new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#338FCC', 'CSS', 'JavaScript', 'https://github.com/FavoredFortune');
-new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'JavaScript', 'Python', 'https://github.com/austincmatteson');
-new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'JavaScript', 'Python', 'https://github.com/brickfaced');
-new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp', 'JavaScript', 'https://github.com/knyghtLyght');
+new Profile('Zachary', '../img/wizzard.jpg', 'watching anime', '#bada55', 'Java, CSS, HTML and JavaScript', 'C# and Python', '../img/zach.jpg', 'https://github.com/buphnezz', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Suzanne', '../img/rogue.jpg', 'knitting', '#338FCC', 'CSS, HTML, and JavaScript', 'C# and Python', 'https://placeholder.com/155x155','https://github.com/FavoredFortune', 'As a software developer I’m keen to make people’s lives easier. Combining my development skills with my history as a strategic, integrated marketer, allows me to offer organizations great experience driving results through team collaboration. In my spare time you can find me bird watching, knitting, or acting as @apartment_cats press agent on Instagram.');
+new Profile('Austin', '../img/cleric.jpg', 'watching movies', '#808080', 'CSS, HTML, and  JavaScript', 'Python', 'https://placeholder.com/155x155', 'https://github.com/austincmatteson', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Ramon', '../img/monk.png', 'racing motorsports', '#ff0000', 'CSS, HTML, and JavaScript', 'Python', 'https://placeholder.com/155x155', 'https://github.com/brickfaced', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
+new Profile('Kevin', '../img/fighter.png', 'martial arts', '#008000', 'cSharp, CSS, HTML, and JavaScript', 'JavaScript', 'https://placeholder.com/155x155', 'https://github.com/knyghtLyght', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosq.');
 
 createOnlyOurAboutUsCards();
 checkLocalStorage();
