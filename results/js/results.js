@@ -37,14 +37,15 @@ function localStorageHandler () {
 
 // create test instance of objects
 function builtInProfiles () {
-  new Profile('Kevin', '../img/rogue.jpg', 'martial arts', '#BADA55', knownArray, interestArray);
+  new Profile('Kevin', '../img/rogue.png', 'martial arts', '#BADA55', knownArray, interestArray);
   new Profile('Ramone', '../img/druid.jpg', 'martial arts', 'green', knownArray, interestArray);
   new Profile('Zach', '../img/monk.png', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Sooz', '../img/wizzard.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Austin', '../img/cleric.jpg', 'martial arts', 'green', knownArray, interestArray);
-  new Profile('Kris', '../img/rogue.jpg', 'reading', '#B51A1F', ['Javascript', 'Python'], ['Java']);
+  new Profile('Sooz', '../img/wizzard.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Austin', '../img/cleric.png', 'martial arts', 'green', knownArray, interestArray);
+  new Profile('Kris', '../img/rogue.png', 'reading', '#B51A1F', ['Javascript', 'Python'], ['Java']);
   new Profile('Judah', '../img/druid.jpg', 'Cooking', 'black', ['Javascript', 'HTML', 'CSS'], ['C#']);
-  new Profile('Carl', '../img/wizzard.jpg', 'Cooking', '#0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
+  new Profile('Carl', '../img/wizzard.png', 'Cooking', '#0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
+  new Profile('Jose', '../img/rogue.png', 'Youtubing', '#af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
 }
 
 // Li builder
