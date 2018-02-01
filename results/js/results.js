@@ -45,8 +45,11 @@ function builtInProfiles () {
   new Profile('Ramon', '../img/monk.png', 'Racing motorsports', 'FF0000', ['Javascript', 'HTML', 'CSS'], ['Python']);
   new Profile('Kris', '../img/rogue.png', 'reading', 'B51A1F', ['Javascript', 'Python'], ['Java']);
   new Profile('Judah', '../img/druid.jpg', 'Cooking', '000000', ['Javascript', 'HTML', 'CSS'], ['C#']);
+  new Profile('Allie', '../img/cleric.png', 'Cooking', '29B0FF', ['Javascript', 'HTML', 'CSS'], ['C#']);
   new Profile('Carl', '../img/wizzard.png', 'Cooking', '0560dd', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
   new Profile('Jose', '../img/rogue.png', 'Youtubing', 'af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
+  new Profile('Michael', '../img/rogue.png', 'Youtubing', '000000', ['Javascript'], ['Javascript']);
+  new Profile('Han', '../img/monk.png', 'Coding', '29B0FF', ['Javascript', 'HTML', 'CSS', 'Python', 'Java'], ['C++']);
 }
 
 // Li builder
