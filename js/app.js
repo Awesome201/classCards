@@ -1,5 +1,8 @@
 'use strict';
 
+//give users notice that our site is best viewed on latest
+alert('Please note that this site is best viewed on the latest version of Chrome.');
+
 // userName variable
 var userName;
 
@@ -75,6 +78,8 @@ function handleLogin (e) {
   localStorage.userName = JSON.stringify(userName);
   window.location = 'profile/profile.html';
 }
+//invoke browser check function
+browserDetection();
 
 //call login function on submit
 formElLoginForm.addEventListener('submit', handleLogin);
