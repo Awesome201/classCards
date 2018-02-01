@@ -25,7 +25,6 @@ a:link{
   text-decoration: none;
 }
 
-
 a{
   color:#874D63;
 }
@@ -143,6 +142,7 @@ main {
 
 div{
   display: inline-block;
+  vertical-align: top;
 }
 
 /* entire container, keeps perspective */
