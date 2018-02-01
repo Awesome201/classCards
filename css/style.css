@@ -82,11 +82,12 @@ fieldset{
 
 label,input{
   margin: 10px; 
+  font-size: 30px;
 }
 
 legend{
   padding: 10px;
-  font-size: 18px;
+  font-size: 40px;
 }
 
 button{
