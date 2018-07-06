@@ -5,20 +5,20 @@ if (localStorage.getItem('userName') === null) {
   window.location = '../index.html';
 }
 
-// declare global variables
-var mainEl = document.getElementById('content');
-var headerEl = document.getElementById('userCard');
-var sectionEl = document.getElementById('misMatchSection');
+// declare global letiables
+let mainEl = document.getElementById('content');
+let headerEl = document.getElementById('userCard');
+let sectionEl = document.getElementById('misMatchSection');
 
 // Add obj array
-var matchArray = [];
-var missMatchArray = [];
-var newUserProfiles;
+let matchArray = [];
+let missMatchArray = [];
+let newUserProfiles;
 Profile.allProfiles = [];
 
-// Test variables
-var knownArray = ['JavaScript', 'HTML', 'CSS'];
-var interestArray = ['Python', 'C#'];
+// Test letiables
+let knownArray = ['JavaScript', 'HTML', 'CSS'];
+let interestArray = ['Python', 'C#'];
 
 // Profile obj constructor
 function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interestedLanguage) {
@@ -54,10 +54,10 @@ function builtInProfiles () {
 
 // Li builder
 function buildLiEl (promptValue, displayValue) {
-  var liEl = document.createElement('li');
+  let liEl = document.createElement('li');
   if (displayValue instanceof Array) {
-    var newString = '';
-    for(var i in displayValue) {
+    let newString = '';
+    for(let i in displayValue) {
       newString = newString + ' ' + displayValue[i];
     }
     displayValue = newString;
@@ -68,23 +68,23 @@ function buildLiEl (promptValue, displayValue) {
 
 // Find matches
 function matchFinder (object, compareArray) {
-  var matchNumber = 0;
-  for (var i in compareArray) {
+  let matchNumber = 0;
+  for (let i in compareArray) {
     if (object.userHobby === compareArray[i].userHobby) {
       matchNumber++;
     }
-    for (var j in object.knownLanguage) {
+    for (let j in object.knownLanguage) {
       if (compareArray[i].knownLanguage.includes(object.knownLanguage[j])) {
         matchNumber++;
       }
     }
-    for (var k in object.interestedLanguage) {
+    for (let k in object.interestedLanguage) {
       if (compareArray[i].interestedLanguage.includes(object.interestedLanguage[k])) {
         matchNumber++;
       }
     }
     // Object literal to hold the index of the object in allProfiles and the number of matches
-    var matchAndNumber = {
+    let matchAndNumber = {
       id: i,
       matches: matchNumber
     };
@@ -99,19 +99,19 @@ function matchFinder (object, compareArray) {
 
 //Create user messaging when showing results
 function addMatchingText () {
-  var h2El1 = document.createElement('h2');
+  let h2El1 = document.createElement('h2');
   h2El1.id = 'results';
   h2El1.textContent = 'You matched with ' + matchArray.length + ' classmate(s).';
   headerEl.appendChild(h2El1);
-  var h2El2 = document.createElement('h2');
+  let h2El2 = document.createElement('h2');
   h2El2.id = 'results';
   h2El2.textContent = 'You could learn from ' + missMatchArray.length + ' classmate(s).';
   headerEl.appendChild(h2El2);
-  var h2El3 = document.createElement('h2');
+  let h2El3 = document.createElement('h2');
   h2El3.id = 'results';
   h2El3.textContent = 'Your Matches ';
   mainEl.appendChild(h2El3);
-  var h2El4 = document.createElement('h2');
+  let h2El4 = document.createElement('h2');
   h2El4.id = 'results';
   h2El4.textContent = 'Classmates you could learn from:';
   sectionEl.appendChild(h2El4);
@@ -119,26 +119,26 @@ function addMatchingText () {
 
 // Create and appened card
 function createCard (profileObj) {
-  var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
+  let divElFlipContainer = document.createElement('div'); // Create the div that houses the card
   divElFlipContainer.setAttribute('id', profileObj.userName + 'div'); // Set the div ID to the
   divElFlipContainer.setAttribute('class', 'flipContainer');
-  var divElFlipper = document.createElement('div');
+  let divElFlipper = document.createElement('div');
   divElFlipper.setAttribute('class', 'flipper'); // Div that holds the transition
-  var divElFront = document.createElement('div'); //Div that holds the front side of the card
+  let divElFront = document.createElement('div'); //Div that holds the front side of the card
   divElFront.setAttribute('class', 'front');
-  var divElBack = document.createElement('div'); // Div for the back of the card
+  let divElBack = document.createElement('div'); // Div for the back of the card
   divElBack.setAttribute('class', 'back');
-  var h2El = document.createElement('h2'); // Create the h2 element
+  let h2El = document.createElement('h2'); // Create the h2 element
   h2El.textContent = profileObj.userName; // Set its contents to the userName
   divElFront.appendChild(h2El); // appened the h2 to the div
-  var imgEl = document.createElement('img'); // Create the img element for the avatar
+  let imgEl = document.createElement('img'); // Create the img element for the avatar
   imgEl.src = profileObj.userAvatar;
   imgEl.alt = profileObj.userName;
   divElFront.style.backgroundColor = ('#' + profileObj.userColor);
   divElFront.appendChild(imgEl);
   divElFlipper.appendChild(divElFront);
   // add interests
-  var ulEl = document.createElement('ul'); // Create the ul to house the interests
+  let ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', profileObj.userHobby));
   ulEl.appendChild(buildLiEl('Code Known : ', profileObj.knownLanguage));
   ulEl.appendChild(buildLiEl('Code Interest : ', profileObj.interestedLanguage));
@@ -152,10 +152,10 @@ function createCard (profileObj) {
 //Display the matching cards
 function updateDisplay (matchArray) {
   headerEl.appendChild(createCard(newUserProfiles));
-  for (var i in matchArray) {
+  for (let i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
   }
-  for (var j in missMatchArray) {
+  for (let j in missMatchArray) {
     sectionEl.appendChild(createCard(Profile.allProfiles[missMatchArray[j].id]));
   }
 }
