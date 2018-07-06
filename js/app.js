@@ -6,42 +6,42 @@ if (localStorage.getItem('alert') === null){
   localStorage.setItem('alert', '1');
 }
 
-// userName variable
-var userName;
+// userName letiable
+let userName;
 
 //get element information
-var inputElUserName = document.getElementById('userName');
-var formElLoginForm = document.getElementById('loginForm');
-var mainEl = document.getElementById('content');
+let inputElUserName = document.getElementById('userName');
+let formElLoginForm = document.getElementById('loginForm');
+let mainEl = document.getElementById('content');
 
-function buildLiEl (promptValue, displayValue) {
-  var liEl = document.createElement('li');
+const buildLiEl = (promptValue, displayValue) => {
+  let liEl = document.createElement('li');
   liEl.textContent = promptValue + displayValue;
   return liEl;
-}
+};
 
-function createCard () {
-  var divElFlipContainer = document.createElement('div'); // Create the div that houses the card
+const createCard = () => {
+  let divElFlipContainer = document.createElement('div'); // Create the div that houses the card
   divElFlipContainer.setAttribute('id', 'exampleCard'); // Set the div ID to the
   divElFlipContainer.setAttribute('class', 'flipContainer1');
-  var divElFlipper = document.createElement('div');
+  let divElFlipper = document.createElement('div');
   divElFlipper.setAttribute('class', 'flipper1');
-  var divElFront = document.createElement('div');
+  let divElFront = document.createElement('div');
   divElFront.setAttribute('class', 'front1');
-  var divElBack = document.createElement('div');
+  let divElBack = document.createElement('div');
   divElBack.setAttribute('class', 'back1');
-  var h2El = document.createElement('h2'); // Create the h2 element
+  let h2El = document.createElement('h2'); // Create the h2 element
   h2El.textContent = 'This could be you! Hover for more'; // Set its contents to the userName
   divElFront.appendChild(h2El); // appened the h2 to the div
   divElFlipper.appendChild(divElFront);
 
-  var gifOfAllAvatars = document.createElement('img');
+  let gifOfAllAvatars = document.createElement('img');
   gifOfAllAvatars.id = 'card-img';
   gifOfAllAvatars.src = 'img/avatar.gif';
   h2El.appendChild(gifOfAllAvatars);
 
   // add interests
-  var ulEl = document.createElement('ul'); // Create the ul to house the interests
+  let ulEl = document.createElement('ul'); // Create the ul to house the interests
   ulEl.appendChild(buildLiEl('Hobby: ', 'Your info here'));
   ulEl.appendChild(buildLiEl('Code Known : ', 'Your info here'));
   ulEl.appendChild(buildLiEl('Code Interest : ', 'Your info here'));
@@ -49,19 +49,19 @@ function createCard () {
   divElFlipper.appendChild(divElBack);
   divElFlipContainer.appendChild(divElFlipper);
   return divElFlipContainer;
-}
+};
 
 //if no local, create it. else, use it
-function checkLocalStorage() {
+const checkLocalStorage = () => {
   if (localStorage.getItem('userName') === null) {
     return;
   } else {
     userName = JSON.parse(localStorage.userName);
 
-    var navElementLink = document.getElementById('nav-link1');
-    var navOlElement = document.getElementById('conditional-nav');
-    var navliElement = document.createElement('li');
-    var navaElement = document.createElement('a');
+    let navElementLink = document.getElementById('nav-link1');
+    let navOlElement = document.getElementById('conditional-nav');
+    let navliElement = document.createElement('li');
+    let navaElement = document.createElement('a');
 
     navliElement.id = 'nav-link';
     navaElement.textContent = 'Edit Your Profile';
@@ -79,21 +79,21 @@ function checkLocalStorage() {
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
   }
-}
+};
 //set the value to user input and save to local storage
-function handleLogin (e) {
-  e.preventDefault();
+const handleLogin = (event) => {
+  event.preventDefault();
   userName = inputElUserName.value;
   localStorage.userName = JSON.stringify(userName);
   window.location = 'profile/profile.html';
-}
+};
 
-//call login function on submit
+//call login const on submit
 formElLoginForm.addEventListener('submit', handleLogin);
 
-function updateDisplay () {
+const updateDisplay = () => {
   mainEl.appendChild(createCard());
-}
+};
 
 //call local check
 checkLocalStorage();

@@ -14,7 +14,7 @@ let cardElement = document.getElementById('all-cards');
 Profile.allProfiles = [];
 
 // dynamically generate the nav based off if the user has visited the site before or not
-function checkLocalStorage() {
+const checkLocalStorage = () => {
   if (localStorage.getItem('userName') === null) {
     return;
   } else {
@@ -40,10 +40,10 @@ function checkLocalStorage() {
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
   }
-}
+};
 
 // this holds all the properties for each Profile that will be generated
-function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, aboutUsPic, gitHubLink, aboutUsProfile) {
+const Profile = (userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, aboutUsPic, gitHubLink, aboutUsProfile) => {
   this.userName = userName;
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
@@ -54,26 +54,26 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
   this.aboutUsProfile = aboutUsProfile;
   this.aboutUsPic = aboutUsPic;
   Profile.allProfiles.push(this);
-}
+};
 
 // this function will call ALL cards that have been created and are stored in our Profile.allProfiles array
-function createAllCards() {
+const createAllCards = () => {
   for (let i in Profile.allProfiles) {
     Profile.allProfiles[i].render();
   }
-}
+};
 
 // this function calls ONLY our 5 cards to be used on our About Us page
-function createOnlyOurAboutUsCards() {
+const createOnlyOurAboutUsCards = () => {
   for (let i = 0; i < 5; i++) {
     Profile.allProfiles[i].render();
   }
-}
+};
 
 // create DOM elements
 // tell the DOM to get each property value from the Profile object constructor in the appropriate element
 // attach the element in the appropriate location in the DOM
-Profile.prototype.render = function () {
+Profile.prototype.render = () => {
   let divMain = document.createElement('div'); // Flip container
   divMain.className = 'card';
   cardElement.appendChild(divMain);

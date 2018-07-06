@@ -21,7 +21,7 @@ let knownArray = ['JavaScript', 'HTML', 'CSS'];
 let interestArray = ['Python', 'C#'];
 
 // Profile obj constructor
-function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interestedLanguage) {
+const Profile = (userName,userAvatar,userHobby,userColor,knownLanguage, interestedLanguage) => {
   this.userName = userName;
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
@@ -29,15 +29,15 @@ function Profile(userName,userAvatar,userHobby,userColor,knownLanguage, interest
   this.knownLanguage = knownLanguage;
   this.interestedLanguage = interestedLanguage;
   Profile.allProfiles.push(this);
-}
+};
 
 // Local storage check
-function localStorageHandler () {
+const localStorageHandler = () => {
   newUserProfiles = JSON.parse(localStorage.newUserName);
-}
+};
 
 // create test instance of objects
-function builtInProfiles () {
+const builtInProfiles = () => {
   new Profile('Kevin', '../img/monk.png', 'martial arts', '1F6212', knownArray, interestArray);
   new Profile('Austin', '../img/fighter.png', 'watching movies', '404040', ['Javascript', 'HTML', 'CSS'], ['Python', 'Ruby']);
   new Profile('Zach', '../img/wizzard.png', 'Anime', '49F3FF', ['Javascript', 'HTML', 'CSS'], ['Python', 'C#']);
@@ -50,10 +50,10 @@ function builtInProfiles () {
   new Profile('Jose', '../img/rogue.png', 'Youtubing', 'af111c', ['Javascript', 'HTML', 'CSS'], ['C#', 'Python']);
   new Profile('Michael', '../img/rogue.png', 'Youtubing', '000000', ['Javascript'], ['Javascript']);
   new Profile('Han', '../img/monk.png', 'Coding', '29B0FF', ['Javascript', 'HTML', 'CSS', 'Python', 'Java'], ['C++']);
-}
+};
 
 // Li builder
-function buildLiEl (promptValue, displayValue) {
+const buildLiEl = (promptValue, displayValue) => {
   let liEl = document.createElement('li');
   if (displayValue instanceof Array) {
     let newString = '';
@@ -64,10 +64,10 @@ function buildLiEl (promptValue, displayValue) {
   }
   liEl.textContent = promptValue + displayValue;
   return liEl;
-}
+};
 
 // Find matches
-function matchFinder (object, compareArray) {
+const matchFinder = (object, compareArray) => {
   let matchNumber = 0;
   for (let i in compareArray) {
     if (object.userHobby === compareArray[i].userHobby) {
@@ -95,10 +95,10 @@ function matchFinder (object, compareArray) {
     }
     matchNumber = 0;
   }
-}
+};
 
 //Create user messaging when showing results
-function addMatchingText () {
+const addMatchingText = () => {
   let h2El1 = document.createElement('h2');
   h2El1.id = 'results';
   h2El1.textContent = 'You matched with ' + matchArray.length + ' classmate(s).';
@@ -115,10 +115,10 @@ function addMatchingText () {
   h2El4.id = 'results';
   h2El4.textContent = 'Classmates you could learn from:';
   sectionEl.appendChild(h2El4);
-}
+};
 
 // Create and appened card
-function createCard (profileObj) {
+const createCard = (profileObj) => {
   let divElFlipContainer = document.createElement('div'); // Create the div that houses the card
   divElFlipContainer.setAttribute('id', profileObj.userName + 'div'); // Set the div ID to the
   divElFlipContainer.setAttribute('class', 'flipContainer');
@@ -147,10 +147,10 @@ function createCard (profileObj) {
   divElFlipper.appendChild(divElBack);
   divElFlipContainer.appendChild(divElFlipper);
   return divElFlipContainer;
-}
+};
 
 //Display the matching cards
-function updateDisplay (matchArray) {
+const updateDisplay = (matchArray) => {
   headerEl.appendChild(createCard(newUserProfiles));
   for (let i in matchArray) {
     mainEl.appendChild(createCard(Profile.allProfiles[matchArray[i].id]));
@@ -158,7 +158,7 @@ function updateDisplay (matchArray) {
   for (let j in missMatchArray) {
     sectionEl.appendChild(createCard(Profile.allProfiles[missMatchArray[j].id]));
   }
-}
+};
 
 localStorageHandler();
 builtInProfiles();
