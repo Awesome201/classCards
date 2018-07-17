@@ -2,6 +2,7 @@
 Code Fellows 201 Final Team Project
 *Helping Code Fellow Student find other classmates with shared interest.*
 
+Experience the Class Cards application here: http://www.classcards.club/.
 
 ## Why this project?
 
