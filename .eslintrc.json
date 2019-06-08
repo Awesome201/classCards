@@ -1,55 +1,46 @@
 {
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "impliedStrict": true
-    }
-  },
+  "extends": [
+    "airbnb-base",
+    "plugin:jest/recommended",
+    "plugin:react/recommended"
+  ],
   "env": {
-    "browser": true,
-    "es6": true
+    "browser": true
   },
+  "globals": {
+    "API_URL": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "jest",
+    "react"
+  ],
   "rules": {
-    "eqeqeq": [
-      "error",
-      "always"
-    ],
-    "no-console": "off",
-    "no-undefined": "off",
-    "indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "warn",
-      "single"
-    ],
-    "space-infix-ops": [
+    "arrow-body-style": "off",
+    "class-methods-use-this": "off",
+    "global-require": "off",
+    "import/no-extraneous-dependencies": [
       "error",
       {
-        "int32Hint": false
+        "devDependencies": true
       }
     ],
-    "no-multi-spaces": [
-      "warn",
-      {
-        "exceptions": {
-          "VariableDeclarator": true
-        }
-      }
-    ],
-    "no-trailing-spaces": "warn",
-    "new-cap": "warn",
-    "no-redeclare": [
+    "linebreak-style": "off",
+    "no-multi-assign": "off",
+    "no-param-reassign": [
       "error",
       {
-        "builtinGlobals": true
+        "props": false
       }
     ],
-    "semi": [
-      2,
-      "always"
-    ]
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-trailing-spaces": "off",
+    "no-underscore-dangle": "off",
+    "strict": "off"
   }
 }

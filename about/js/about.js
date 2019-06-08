@@ -7,22 +7,22 @@ if (localStorage.getItem('alert') === null){
 }
 
 // retrieve the 'card' class from the DOM
-var cardElement = document.getElementById('all-cards');
+let cardElement = document.getElementById('all-cards');
 
 // this holds all the profiles
 // any new profiles will also be held in this array
 Profile.allProfiles = [];
 
 // dynamically generate the nav based off if the user has visited the site before or not
-function checkLocalStorage() {
+const checkLocalStorage = () => {
   if (localStorage.getItem('userName') === null) {
     return;
   } else {
 
-    var navElementLink = document.getElementById('nav-link1');
-    var navOlElement = document.getElementById('conditional-nav');
-    var navliElement = document.createElement('li');
-    var navaElement = document.createElement('a');
+    let navElementLink = document.getElementById('nav-link1');
+    let navOlElement = document.getElementById('conditional-nav');
+    let navliElement = document.createElement('li');
+    let navaElement = document.createElement('a');
 
     navliElement.id = 'nav-link';
     navaElement.textContent = 'Edit Your Profile';
@@ -40,10 +40,10 @@ function checkLocalStorage() {
     navOlElement.appendChild(navliElement);
     navliElement.after(navElementLink);
   }
-}
+};
 
 // this holds all the properties for each Profile that will be generated
-function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, aboutUsPic, gitHubLink, aboutUsProfile) {
+const Profile = (userName, userAvatar, userHobby, userColor, knownLanguage, interestedLanguage, aboutUsPic, gitHubLink, aboutUsProfile) => {
   this.userName = userName;
   this.userAvatar = userAvatar;
   this.userHobby = userHobby;
@@ -54,92 +54,92 @@ function Profile(userName, userAvatar, userHobby, userColor, knownLanguage, inte
   this.aboutUsProfile = aboutUsProfile;
   this.aboutUsPic = aboutUsPic;
   Profile.allProfiles.push(this);
-}
+};
 
 // this function will call ALL cards that have been created and are stored in our Profile.allProfiles array
-function createAllCards() {
-  for (var i in Profile.allProfiles) {
+const createAllCards = () => {
+  for (let i in Profile.allProfiles) {
     Profile.allProfiles[i].render();
   }
-}
+};
 
 // this function calls ONLY our 5 cards to be used on our About Us page
-function createOnlyOurAboutUsCards() {
-  for (var i = 0; i < 5; i++) {
+const createOnlyOurAboutUsCards = () => {
+  for (let i = 0; i < 5; i++) {
     Profile.allProfiles[i].render();
   }
-}
+};
 
 // create DOM elements
 // tell the DOM to get each property value from the Profile object constructor in the appropriate element
 // attach the element in the appropriate location in the DOM
-Profile.prototype.render = function () {
-  var divMain = document.createElement('div'); // Flip container
+Profile.prototype.render = () => {
+  let divMain = document.createElement('div'); // Flip container
   divMain.className = 'card';
   cardElement.appendChild(divMain);
 
-  var divHoldTheCards = document.createElement('div'); 
+  let divHoldTheCards = document.createElement('div'); 
   divHoldTheCards.className = 'container';
   divMain.appendChild(divHoldTheCards);
 
-  var divElFlipper = document.createElement('div');
+  let divElFlipper = document.createElement('div');
   divElFlipper.className = 'flipper';
   divHoldTheCards.appendChild(divElFlipper);
 
-  var divElFront = document.createElement('div');
+  let divElFront = document.createElement('div');
   divElFront.className = 'front'; 
   divElFront.style.backgroundColor = this.userColor;
   divElFlipper.appendChild(divElFront);
 
-  var divElBack = document.createElement('div');
+  let divElBack = document.createElement('div');
   divElBack.className = 'back';
   divElBack.style.backgroundColor = this.userColor;
   divElFlipper.appendChild(divElBack);
 
-  var userNameElement = document.createElement('h1');
+  let userNameElement = document.createElement('h1');
   userNameElement.textContent = this.userName;
   userNameElement.className = 'userNames';
   divElFront.appendChild(userNameElement);
 
-  var profileImage = document.createElement('img');
+  let profileImage = document.createElement('img');
   profileImage.id = 'profile-img';
   profileImage.src = this.userAvatar;
   profileImage.className = 'holdsImgs';
   divElFront.appendChild(profileImage);
 
-  var ulEl = document.createElement('ul');
+  let ulEl = document.createElement('ul');
   divElFront.appendChild(ulEl);
 
-  var addPicToProfile = document.createElement('img');
+  let addPicToProfile = document.createElement('img');
   addPicToProfile.id = 'profile-pic';
   addPicToProfile.src = this.aboutUsPic;
   addPicToProfile.className = 'holdsProfilePic';
   divElBack.appendChild(addPicToProfile);
 
-  var anchorForGitHubLink = document.createElement('a');
+  let anchorForGitHubLink = document.createElement('a');
   anchorForGitHubLink.target = '_blank';
   anchorForGitHubLink.href = this.gitHubLink;
   divElBack.appendChild(anchorForGitHubLink);
 
-  var hobbyElement = document.createElement('li');
+  let hobbyElement = document.createElement('li');
   hobbyElement.textContent = 'Current Hobby: ' + '\n' + this.userHobby;
   ulEl.appendChild(hobbyElement);
 
-  var knownLanguageElement = document.createElement('li');
+  let knownLanguageElement = document.createElement('li');
   knownLanguageElement.textContent = 'Coding Languages Known: ' + '\n' + this.knownLanguage;
   ulEl.appendChild(knownLanguageElement);
 
-  var interestedLanguageElement = document.createElement('li');
+  let interestedLanguageElement = document.createElement('li');
   interestedLanguageElement.id = 'last-lang';
   interestedLanguageElement.textContent = 'Coding Language Interests: ' + '\n' + this.interestedLanguage;
   ulEl.appendChild(interestedLanguageElement);
 
-  var buttonElement = document.createElement('button');
+  let buttonElement = document.createElement('button');
   buttonElement.className = 'contact-me';
   buttonElement.textContent = 'GitHub: ' + this.userName;
   anchorForGitHubLink.appendChild(buttonElement);
 
-  var aboutUsDescriptionEl = document.createElement('p');
+  let aboutUsDescriptionEl = document.createElement('p');
   aboutUsDescriptionEl.textContent = this.aboutUsProfile;
   divElBack.appendChild(aboutUsDescriptionEl);
 };
